@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ADU Design Studio - RC Remodeling</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
@@ -26,13 +27,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 /* PROGRESS */
 .progress-track{display:flex;align-items:center;gap:0;margin:28px 0 0;position:relative}
 .progress-track::before{content:'';position:absolute;top:14px;left:0;right:0;height:2px;background:var(--tan2);z-index:0}
-.step-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--tan2);background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--warm);z-index:1;transition:all .3s;flex-shrink:0}
+.step-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--tan2);background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--dark);z-index:1}
 .step-dot.done{background:var(--orange);border-color:var(--orange);color:white}
 .step-dot.active{background:var(--dark);border-color:var(--dark);color:white}
 .step-line{flex:1;height:2px;background:var(--tan2);z-index:0;transition:background .3s}
 .step-line.done{background:var(--orange)}
-.progress-labels{display:flex;justify-content:space-between;margin-top:8px;padding:0 0}
-.prog-label{font-size:10px;color:var(--warm);text-align:center;width:28px;font-weight:500}
 
 /* CARD */
 .card{background:var(--white);border-radius:var(--radius);padding:36px;margin-top:28px;border:1px solid var(--tan);display:none;animation:fadeUp .3s ease}
@@ -47,7 +46,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .opt-grid.cols2{grid-template-columns:1fr 1fr}
 .opt-grid.cols3{grid-template-columns:1fr 1fr 1fr}
 .opt-grid.cols4{grid-template-columns:1fr 1fr 1fr 1fr}
-.opt-btn{background:var(--cream);border:1.5px solid var(--tan2);border-radius:12px;padding:16px 18px;cursor:pointer;text-align:left;transition:all .18s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:12px;width:100%}
+.opt-btn{background:var(--cream);border:1.5px solid var(--tan2);border-radius:12px;padding:16px 18px;cursor:pointer;text-align:left;transition:all .18s;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:12px}
 .opt-btn:hover{border-color:var(--orange);background:#FEF3EE}
 .opt-btn.selected{border-color:var(--orange);background:#FEF3EE;box-shadow:0 0 0 1px var(--orange)}
 .opt-icon{font-size:22px;flex-shrink:0}
@@ -57,8 +56,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .opt-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--tan2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .opt-btn.selected .opt-check{background:var(--orange);border-color:var(--orange)}
 .opt-btn.selected .opt-check::after{content:'✓';color:white;font-size:10px;font-weight:700}
-
-/* MULTI SELECT */
 .opt-btn.multi .opt-check{border-radius:4px}
 
 /* SIZE SLIDER */
@@ -69,6 +66,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .range-wrap{padding:0 8px;margin-bottom:12px}
 input[type=range]{width:100%;-webkit-appearance:none;height:4px;border-radius:2px;background:linear-gradient(to right,var(--orange) var(--pct,40%),var(--tan2) var(--pct,40%));outline:none}
 input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--dark);cursor:pointer;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--dark);cursor:pointer;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .size-presets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
 .size-preset{background:var(--cream);border:1.5px solid var(--tan2);border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;color:var(--dark)}
 .size-preset:hover,.size-preset.active{border-color:var(--orange);background:#FEF3EE;color:var(--orange)}
@@ -91,7 +89,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 
 /* ADDONS */
 .addons-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
-.addon-btn{background:var(--cream);border:1.5px solid var(--tan2);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif;width:100%;text-align:left}
+.addon-btn{background:var(--cream);border:1.5px solid var(--tan2);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif}
 .addon-btn:hover{border-color:var(--orange);background:#FEF3EE}
 .addon-btn.selected{border-color:var(--orange);background:#FEF3EE}
 .addon-icon{font-size:18px;flex-shrink:0}
@@ -103,13 +101,13 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 .addon-btn.selected .addon-cb::after{content:'✓';color:white;font-size:10px;font-weight:700}
 
 /* TEXTAREA */
-.txt-area{width:100%;border:1.5px solid var(--tan2);border-radius:10px;padding:14px 16px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--dark);resize:vertical;min-height:90px;outline:none;background:var(--cream);transition:border .15s;line-height:1.6}
+.txt-area{width:100%;border:1.5px solid var(--tan2);border-radius:10px;padding:14px 16px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--dark);resize:vertical;min-height:90px;outline:none;transition:border-color .15s}
 .txt-area:focus{border-color:var(--orange);background:white}
 .char-hint{font-size:11px;color:var(--warm);margin-top:6px;text-align:right}
 
 /* API KEY INPUT */
 .api-row{display:flex;gap:10px;margin-bottom:8px;align-items:center}
-.api-input{flex:1;border:1.5px solid var(--tan2);border-radius:10px;padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--dark);outline:none;background:var(--cream);transition:border .15s}
+.api-input{flex:1;border:1.5px solid var(--tan2);border-radius:10px;padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--dark);outline:none;background:var(--cream);transition:border-color .15s}
 .api-input:focus{border-color:var(--orange)}
 .api-note{font-size:12px;color:var(--warm);margin-bottom:20px;display:flex;align-items:center;gap:6px}
 
@@ -154,12 +152,11 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 .spec-tile-val{font-size:15px;font-weight:600;color:var(--dark)}
 
 .render-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
-.render-box{border-radius:12px;overflow:hidden;border:1px solid var(--tan);background:var(--cream);min-height:200px;position:relative}
+.render-box{border-radius:12px;overflow:hidden;border:1px solid var(--tan);background:var(--cream);min-height:220px;position:relative;display:flex;align-items:center;justify-content:center}
 .render-box img{width:100%;height:100%;object-fit:cover;display:block}
 .render-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(28,24,20,.7));padding:20px 14px 12px;color:white;font-size:12px;font-weight:600}
-.render-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--warm)}
-.render-spinner{width:32px;height:32px;border:2px solid var(--tan);border-top-color:var(--orange);border-radius:50%;animation:spin 1s linear infinite}
-.render-loading p{font-size:12px}
+.render-placeholder{width:100%;height:220px;background:linear-gradient(135deg,#2D4A3E,#4A7A6A);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
+.render-placeholder-text{font-size:12px;color:rgba(255,255,255,.75);line-height:1.55;max-width:260px}
 
 .floor-plan-box{background:var(--cream);border-radius:12px;padding:24px;border:1px solid var(--tan);margin-bottom:28px}
 .floor-plan-svg-wrap{text-align:center}
@@ -180,7 +177,8 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 .cta-section h3{font-family:'Playfair Display',serif;font-size:22px;color:white;margin-bottom:8px}
 .cta-section p{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;line-height:1.55}
 .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.cta-primary{background:linear-gradient(135deg,var(--orange),var(--orange2));border:none;border-radius:10px;padding:13px 28px;font-size:14px;font-weight:600;color:white;cursor:pointer;font-family:'DM Sans',sans-serif}
+.cta-primary{background:linear-gradient(135deg,var(--orange),var(--orange2));border:none;border-radius:10px;padding:13px 28px;font-size:14px;font-weight:600;color:white;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
+.cta-primary:hover{box-shadow:0 4px 18px rgba(232,80,26,.4);transform:translateY(-1px)}
 .cta-secondary{background:none;border:1.5px solid rgba(255,255,255,.3);border-radius:10px;padding:12px 28px;font-size:14px;font-weight:500;color:white;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
 .cta-secondary:hover{border-color:white}
 
@@ -188,6 +186,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 .restart-btn:hover{border-color:var(--orange);color:var(--orange)}
 
 .divider{border:none;border-top:1px solid var(--tan);margin:28px 0}
+
+.alert{padding:14px 16px;border-radius:10px;margin-bottom:16px;font-size:13px;line-height:1.6}
+.alert.error{background:#FFE8E8;border:1px solid #FFB3B3;color:#8B0000}
+.alert.success{background:#E8F5EE;border:1px solid #B3E5D0;color:#0B5A3A}
 
 @media(max-width:600px){
   .opt-grid.cols3,.opt-grid.cols4{grid-template-columns:1fr 1fr}
@@ -315,19 +317,19 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
     <div>
       <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:10px">Bedrooms</label>
       <div class="opt-grid cols2" style="gap:8px">
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','Studio')"><span class="opt-icon" style="font-size:16px">🛋️</span><span class="opt-text"><span class="opt-label" style="font-size:13px">Studio</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','1 Bed')"><span class="opt-icon" style="font-size:16px">🛏</span><span class="opt-text"><span class="opt-label" style="font-size:13px">1 Bed</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','2 Bed')"><span class="opt-icon" style="font-size:16px">🛏</span><span class="opt-text"><span class="opt-label" style="font-size:13px">2 Bed</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','3 Bed')"><span class="opt-icon" style="font-size:16px">🛏</span><span class="opt-text"><span class="opt-label" style="font-size:13px">3 Bed</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','Studio')"><span class="opt-icon" style="font-size:16px">🛋️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">Studio</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','1 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1 Bed</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','2 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2 Bed</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','3 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">3 Bed</span></span><span class="opt-check"></span></button>
       </div>
     </div>
     <div>
       <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:10px">Bathrooms</label>
       <div class="opt-grid cols2" style="gap:8px">
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:13px">1 Bath</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1.5 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:13px">1.5 Bath</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:13px">2 Bath</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2.5 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:13px">2.5 Bath</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1 Bath</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1.5 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1.5 Bath</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2 Bath</span></span><span class="opt-check"></span></button>
+        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2.5 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2.5 Bath</span></span><span class="opt-check"></span></button>
       </div>
     </div>
   </div>
@@ -346,19 +348,19 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 
   <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:12px">Architectural Style</label>
   <div class="opt-grid cols3" style="margin-bottom:24px">
-    <button class="opt-btn" onclick="sel(this,'style','Modern / Contemporary')"><span class="opt-icon">🔲</span><span class="opt-text"><span class="opt-label">Modern</span><span class="opt-desc">Clean lines, flat roof, large windows</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Spanish / Mediterranean')"><span class="opt-icon">🏛️</span><span class="opt-text"><span class="opt-label">Spanish / Med</span><span class="opt-desc">Stucco, arches, terra cotta</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Craftsman / Traditional')"><span class="opt-icon">🪵</span><span class="opt-text"><span class="opt-label">Craftsman</span><span class="opt-desc">Wood details, covered porch</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Farmhouse')"><span class="opt-icon">🌾</span><span class="opt-text"><span class="opt-label">Farmhouse</span><span class="opt-desc">Board &amp; batten, metal roof</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Mid-Century Modern')"><span class="opt-icon">🌿</span><span class="opt-text"><span class="opt-label">Mid-Century</span><span class="opt-desc">Low pitch, organic materials</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Match Main House')"><span class="opt-icon">🏠</span><span class="opt-text"><span class="opt-label">Match House</span><span class="opt-desc">Mirror the main home's style</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'style','Modern / Contemporary')"><span class="opt-icon">🔲</span><span class="opt-text"><span class="opt-label">Modern</span><span class="opt-desc">Clean lines, minimalist</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'style','Spanish / Mediterranean')"><span class="opt-icon">🏛️</span><span class="opt-text"><span class="opt-label">Spanish / Med</span><span class="opt-desc">Arches, warm tones</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'style','Craftsman / Traditional')"><span class="opt-icon">🪵</span><span class="opt-text"><span class="opt-label">Craftsman</span><span class="opt-desc">Details, wood</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'style','Farmhouse')"><span class="opt-icon">🌾</span><span class="opt-text"><span class="opt-label">Farmhouse</span><span class="opt-desc">Board & batten</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'style','Mid-Century Modern')"><span class="opt-icon">🌿</span><span class="opt-text"><span class="opt-label">Mid-Century</span><span class="opt-desc">Retro mod</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'style','Match Main House')"><span class="opt-icon">🏠</span><span class="opt-text"><span class="opt-label">Match House</span><span class="opt-desc">Mirror existing</span></span><span class="opt-check"></span></button>
   </div>
 
   <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:12px">Site Conditions</label>
   <div class="opt-grid cols3" style="margin-bottom:28px">
-    <button class="opt-btn" onclick="sel(this,'site','flat')"><span class="opt-icon">⬜</span><span class="opt-text"><span class="opt-label">Flat / Level</span><span class="opt-desc">Standard grading, most cost-effective</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'site','gentle')"><span class="opt-icon">📐</span><span class="opt-text"><span class="opt-label">Gentle Slope</span><span class="opt-desc">Moderate cut/fill, ~+12% cost</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'site','hillside')"><span class="opt-icon">⛰️</span><span class="opt-text"><span class="opt-label">Hillside / Steep</span><span class="opt-desc">Deep foundation, pier system</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'site','flat')"><span class="opt-icon">⬜</span><span class="opt-text"><span class="opt-label">Flat / Level</span><span class="opt-desc">Standard grading</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'site','gentle')"><span class="opt-icon">📐</span><span class="opt-text"><span class="opt-label">Gentle Slope</span><span class="opt-desc">Moderate cut/fill</span></span><span class="opt-check"></span></button>
+    <button class="opt-btn" onclick="sel(this,'site','hillside')"><span class="opt-icon">⛰️</span><span class="opt-text"><span class="opt-label">Hillside / Steep</span><span class="opt-desc">Deep excavation</span></span><span class="opt-check"></span></button>
   </div>
 
   <div class="nav-row">
@@ -410,22 +412,22 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
   <h2>Additional features<br>&amp; upgrades</h2>
   <p class="sub">Select everything the client wants to include. Multiple selections allowed.</p>
   <div class="addons-grid">
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Deck / Patio')"><span class="addon-icon">🪵</span><span class="addon-info"><span class="addon-name">Deck / Patio</span><span class="addon-note">Outdoor living space, ~200 sq ft</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Solar Panels')"><span class="addon-icon">☀️</span><span class="addon-info"><span class="addon-name">Solar Panels</span><span class="addon-note">6 kW system</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'EV Charger')"><span class="addon-icon">⚡</span><span class="addon-info"><span class="addon-name">EV Charger</span><span class="addon-note">Level 2, panel-ready</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Smart Home System')"><span class="addon-icon">🏠</span><span class="addon-info"><span class="addon-name">Smart Home System</span><span class="addon-note">Lutron, Control4, Ring, Sonos</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Carport')"><span class="addon-icon">🚗</span><span class="addon-info"><span class="addon-name">Carport</span><span class="addon-note">Covered parking structure</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Laundry Room')"><span class="addon-icon">👕</span><span class="addon-info"><span class="addon-name">In-Unit Laundry</span><span class="addon-note">Washer/dryer hookups</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Premium Appliances')"><span class="addon-icon">🍳</span><span class="addon-info"><span class="addon-name">Premium Appliances</span><span class="addon-note">Stainless or panel-ready suite</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Tankless Water Heater')"><span class="addon-icon">🔥</span><span class="addon-info"><span class="addon-name">Tankless Water Heater</span><span class="addon-note">On-demand hot water</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Radiant Floor Heating')"><span class="addon-icon">🌡️</span><span class="addon-info"><span class="addon-name">Radiant Floor Heating</span><span class="addon-note">In-floor electric heat, bathrooms</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Vaulted Ceilings')"><span class="addon-icon">🔺</span><span class="addon-info"><span class="addon-name">Vaulted Ceilings</span><span class="addon-note">Cathedral or shed ceiling design</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Skylights')"><span class="addon-icon">🌤️</span><span class="addon-info"><span class="addon-name">Skylights</span><span class="addon-note">Natural light, 1–3 units</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Custom Built-Ins')"><span class="addon-icon">📚</span><span class="addon-info"><span class="addon-name">Custom Built-Ins</span><span class="addon-note">Shelving, closets, storage</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Energy-Efficient Windows')"><span class="addon-icon">🪟</span><span class="addon-info"><span class="addon-name">Upgraded Windows</span><span class="addon-note">Andersen 400 / Marvin Elevate</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Retaining Wall')"><span class="addon-icon">🧱</span><span class="addon-info"><span class="addon-name">Retaining Wall</span><span class="addon-note">For slope or hillside sites</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Privacy Fencing / Landscaping')"><span class="addon-icon">🌿</span><span class="addon-info"><span class="addon-name">Privacy Fencing / Landscaping</span><span class="addon-note">Perimeter and entryway</span></span><div class="addon-cb"></div></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Security Cameras')"><span class="addon-icon">📷</span><span class="addon-info"><span class="addon-name">Security Cameras</span><span class="addon-note">Ring or Nest system</span></span><div class="addon-cb"></div></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Deck / Patio')"><span class="addon-icon">🪵</span><span class="addon-info"><span class="addon-name">Deck / Patio</span><span class="addon-note">Outdoor living space</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Solar Panels')"><span class="addon-icon">☀️</span><span class="addon-info"><span class="addon-name">Solar Panels</span><span class="addon-note">Renewable energy</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'EV Charger')"><span class="addon-icon">⚡</span><span class="addon-info"><span class="addon-name">EV Charger</span><span class="addon-note">Level 2 charging</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Smart Home System')"><span class="addon-icon">🏠</span><span class="addon-info"><span class="addon-name">Smart Home System</span><span class="addon-note">Connected controls</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Carport')"><span class="addon-icon">🚗</span><span class="addon-info"><span class="addon-name">Carport</span><span class="addon-note">Covered parking</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Laundry Room')"><span class="addon-icon">👕</span><span class="addon-info"><span class="addon-name">In-Unit Laundry</span><span class="addon-note">Washer / dryer</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Premium Appliances')"><span class="addon-icon">🍳</span><span class="addon-info"><span class="addon-name">Premium Appliances</span><span class="addon-note">Stainless suite</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Tankless Water Heater')"><span class="addon-icon">🔥</span><span class="addon-info"><span class="addon-name">Tankless Water Heater</span><span class="addon-note">On-demand hot water</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Radiant Floor Heating')"><span class="addon-icon">🌡️</span><span class="addon-info"><span class="addon-name">Radiant Floor Heating</span><span class="addon-note">Under-floor warmth</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Vaulted Ceilings')"><span class="addon-icon">🔺</span><span class="addon-info"><span class="addon-name">Vaulted Ceilings</span><span class="addon-note">High open space</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Skylights')"><span class="addon-icon">🌤️</span><span class="addon-info"><span class="addon-name">Skylights</span><span class="addon-note">Natural light</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Custom Built-Ins')"><span class="addon-icon">📚</span><span class="addon-info"><span class="addon-name">Custom Built-Ins</span><span class="addon-note">Storage solutions</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Energy-Efficient Windows')"><span class="addon-icon">🪟</span><span class="addon-info"><span class="addon-name">Upgraded Windows</span><span class="addon-note">High performance</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Retaining Wall')"><span class="addon-icon">🧱</span><span class="addon-info"><span class="addon-name">Retaining Wall</span><span class="addon-note">Structural support</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Privacy Fencing / Landscaping')"><span class="addon-icon">🌿</span><span class="addon-info"><span class="addon-name">Privacy Fencing</span><span class="addon-note">Landscaping</span></span><span class="addon-cb"></span></button>
+    <button class="addon-btn multi" onclick="toggleAddon(this,'Security Cameras')"><span class="addon-icon">📷</span><span class="addon-info"><span class="addon-name">Security Cameras</span><span class="addon-note">Home monitoring</span></span><span class="addon-cb"></span></button>
   </div>
   <div class="nav-row">
     <button class="back-btn" onclick="goTo(5)">← Back</button>
@@ -441,7 +443,7 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
 
   <div style="margin-bottom:16px">
     <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Overall Vision & Feel</label>
-    <textarea class="txt-area" id="visionInput" placeholder="e.g. We want it to feel like a luxury hotel suite — light and airy with big windows. The kitchen should be open to the living area. Very clean and modern, mostly white and warm wood tones..." oninput="checkStep7()"></textarea>
+    <textarea class="txt-area" id="visionInput" placeholder="e.g. We want it to feel like a luxury hotel suite — light and airy with big windows. The kitchen should be open to the living area. Very modern." oninput="checkStep7()"></textarea>
     <div class="char-hint" id="visionCount">0 / 50 characters minimum</div>
   </div>
 
@@ -482,9 +484,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
   <h2>Ready to generate<br>your client's ADU</h2>
   <p class="sub">Review the selections below, then generate the full design package with AI renderings.</p>
   <div id="summaryPreview" style="background:var(--cream);border-radius:12px;padding:20px;margin-bottom:28px;border:1px solid var(--tan);font-size:13px;line-height:1.8;color:var(--dark)"></div>
+  <div id="alertContainer"></div>
   <div class="nav-row">
     <button class="back-btn" onclick="goTo(7)">← Edit</button>
-    <button class="next-btn" onclick="generate()" style="background:linear-gradient(135deg,#2D5A3D,#1A3A2A)">✦ Generate Design Package</button>
+    <button class="next-btn" id="generateBtn" onclick="generate()" style="background:linear-gradient(135deg,#2D5A3D,#1A3A2A)">✦ Generate Design Package</button>
   </div>
 </div>
 
@@ -530,10 +533,10 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;heigh
     <div class="section-head"><div class="section-num">3</div><h3>AI Design Renderings</h3></div>
     <p style="font-size:13px;color:var(--warm);margin-bottom:16px;line-height:1.6">Conceptual renderings generated from your client's vision. Style and finishes reflect their selections.</p>
     <div class="render-grid" id="renderGrid">
-      <div class="render-box" id="render1"><div class="render-loading"><div class="render-spinner"></div><p>Generating exterior view…</p></div></div>
-      <div class="render-box" id="render2"><div class="render-loading"><div class="render-spinner"></div><p>Generating living room…</p></div></div>
-      <div class="render-box" id="render3"><div class="render-loading"><div class="render-spinner"></div><p>Generating kitchen…</p></div></div>
-      <div class="render-box" id="render4"><div class="render-loading"><div class="render-spinner"></div><p>Generating bathroom…</p></div></div>
+      <div class="render-box" id="render1"><div class="render-placeholder"><div class="render-placeholder-text">Exterior view rendering will appear here</div></div><div class="render-label">Exterior View</div></div>
+      <div class="render-box" id="render2"><div class="render-placeholder"><div class="render-placeholder-text">Living room rendering will appear here</div></div><div class="render-label">Living Room</div></div>
+      <div class="render-box" id="render3"><div class="render-placeholder"><div class="render-placeholder-text">Kitchen rendering will appear here</div></div><div class="render-label">Kitchen</div></div>
+      <div class="render-box" id="render4"><div class="render-placeholder"><div class="render-placeholder-text">Bathroom rendering will appear here</div></div><div class="render-label">Primary Bathroom</div></div>
     </div>
 
     <hr class="divider">
@@ -578,8 +581,8 @@ const state = {
   vision:'', kitchen:'', bath:'', colors:''
 };
 
-// ---- NAVIGATION ----
 let currentStep = 1;
+
 function goTo(n){
   document.getElementById('step'+currentStep).classList.remove('active');
   document.getElementById('step'+n).classList.add('active');
@@ -604,7 +607,6 @@ function updateProgress(step){
   }
 }
 
-// ---- SELECTIONS ----
 function sel(btn, key, val){
   const group = btn.closest('.opt-grid, .card');
   group.querySelectorAll('.opt-btn').forEach(b=>{
@@ -654,8 +656,8 @@ function checkStep7(){
   document.getElementById('next7').disabled = count < 50;
 }
 
-// ---- SQFT ----
-const sqftLabels = {200:'Micro Studio',300:'Studio',400:'Large Studio',450:'Large Studio',500:'Studio / 1 Bed',550:'1 Bed / 1 Bath',600:'1 Bed / 1 Bath',650:'1 Bed / 1 Bath',700:'1 Bed / 1 Bath',750:'1-2 Bed / 1 Bath',800:'2 Bed / 1 Bath',850:'2 Bed / 1-2 Bath',900:'2 Bed / 1-2 Bath',950:'2 Bed / 2 Bath',1000:'2 Bed / 2 Bath',1050:'2-3 Bed / 2 Bath',1100:'3 Bed / 2 Bath',1150:'3 Bed / 2 Bath',1200:'3 Bed / 2 Bath'};
+const sqftLabels = {200:'Micro Studio',300:'Studio',400:'Large Studio',450:'Large Studio',500:'Studio / 1 Bed',550:'1 Bed / 1 Bath',600:'1 Bed / 1 Bath',650:'1 Bed / 1 Bath',700:'1 Bed / 1 Bath',750:'1 Bed / 1 Bath+',800:'1-2 Bed',850:'1-2 Bed',900:'2 Bed / 1 Bath',950:'2 Bed',1000:'2 Bed / 2 Bath',1050:'2 Bed / 2 Bath',1100:'2-3 Bed',1150:'2-3 Bed',1200:'3 Bed / 2 Bath'};
+
 function onSqft(el){
   const v = parseInt(el.value);
   state.sqft = v;
@@ -664,11 +666,9 @@ function onSqft(el){
   document.getElementById('sqftLabel').textContent = sqftLabels[rounded] || '';
   const pct = ((v-200)/(1200-200)*100).toFixed(1);
   el.style.setProperty('--pct', pct+'%');
-  document.querySelectorAll('.size-preset').forEach(b=>{
-    b.classList.remove('active');
-    if(parseInt(b.onclick?.toString()?.match(/\d+/)?.[0]) === v) b.classList.add('active');
-  });
+  updatePresetButtons(v);
 }
+
 function setSqft(v){
   state.sqft = v;
   const el = document.getElementById('sqftRange');
@@ -677,11 +677,16 @@ function setSqft(v){
   document.getElementById('sqftLabel').textContent = sqftLabels[v] || '';
   const pct = ((v-200)/(1200-200)*100).toFixed(1);
   el.style.setProperty('--pct', pct+'%');
-  document.querySelectorAll('.size-preset').forEach(b=>b.classList.remove('active'));
-  event.currentTarget.classList.add('active');
+  updatePresetButtons(v);
 }
 
-// ---- SUMMARY ----
+function updatePresetButtons(v){
+  document.querySelectorAll('.size-preset').forEach(b=>{
+    b.classList.remove('active');
+    if(parseInt(b.textContent.match(/\d+/)[0]) === v) b.classList.add('active');
+  });
+}
+
 function buildSummary(){
   const finishNames = {budget:'Budget / Builder-Grade', mid:'Mid-Range (Most Popular)', high:'High-End / Luxury'};
   const typeNames = {detached:'Detached ADU', attached:'Attached ADU', garage:'Garage Conversion', jadu:'Junior ADU (JADU)'};
@@ -702,8 +707,8 @@ function buildSummary(){
   document.getElementById('summaryPreview').innerHTML = html;
 }
 
-// ---- GENERATE ----
 async function generate(){
+  clearAlerts();
   document.getElementById('step8').classList.remove('active');
   const gc = document.getElementById('genCard');
   gc.classList.add('active');
@@ -744,10 +749,6 @@ RC Remodeling finish tier reference:
 Please respond ONLY with a valid JSON object (no markdown, no backticks, no explanation) in exactly this format:
 {
   "floorPlanDesc": "A detailed 3-4 sentence description of the floor plan layout, room flow, and spatial arrangement for this specific ADU",
-  "exteriorPrompt": "A highly detailed DALL-E image generation prompt for a photorealistic exterior rendering of this ADU. Include architectural style, materials, landscaping, LA setting, time of day, lighting. 60-80 words.",
-  "livingRoomPrompt": "A highly detailed DALL-E prompt for a photorealistic interior rendering of the living room / main living area. Include specific finishes, furniture style, lighting, colors from client vision. 60-80 words.",
-  "kitchenPrompt": "A highly detailed DALL-E prompt for a photorealistic interior rendering of the kitchen. Include cabinet style, countertops, appliances, backsplash, lighting. Match finish tier and client preferences. 60-80 words.",
-  "bathroomPrompt": "A highly detailed DALL-E prompt for a photorealistic interior rendering of the primary bathroom. Include all fixtures, tile, vanity, lighting, finishes. Match client preferences. 60-80 words.",
   "finishSummary": "2-3 sentences summarizing the finish selections appropriate for this tier and client vision",
   "finishDetails": [
     {"category": "Flooring", "spec": "specific product/material recommendation"},
@@ -755,11 +756,9 @@ Please respond ONLY with a valid JSON object (no markdown, no backticks, no expl
     {"category": "Cabinetry", "spec": "specific product/material recommendation"},
     {"category": "Bathroom", "spec": "specific fixture and tile recommendation"},
     {"category": "Fixtures", "spec": "specific brand and finish recommendation"},
-    {"category": "Appliances", "spec": "specific brand tier recommendation"},
-    {"category": "Lighting", "spec": "specific lighting approach recommendation"},
-    {"category": "Windows & Doors", "spec": "specific product recommendation"}
+    {"category": "Appliances", "spec": "specific brand tier recommendation"}
   ],
-  "consultantNotes": "3-4 sentences of personalized consultant observations about this client's ADU — key design opportunities, potential challenges to discuss, ROI notes for their stated purpose, and one specific recommendation that would elevate the project."
+  "consultantNotes": "3-4 sentences of personalized consultant observations about this client's ADU — key design opportunities, potential challenges to discuss, ROI notes for their stated purpose, and next steps"
 }`;
 
   try {
@@ -775,7 +774,10 @@ Please respond ONLY with a valid JSON object (no markdown, no backticks, no expl
       })
     });
 
+    if(!res.ok) throw new Error(`API error: ${res.status} - ${res.statusText}`);
     const data = await res.json();
+    if(data.error) throw new Error(data.error.message || 'API error');
+    
     const raw = data.content?.[0]?.text || '{}';
     const clean = raw.replace(/```json|```/g,'').trim();
     const result = JSON.parse(clean);
@@ -783,14 +785,6 @@ Please respond ONLY with a valid JSON object (no markdown, no backticks, no expl
     setTimeout(()=>animateStep(2), 1600);
     setTimeout(()=>animateStep(3), 2400);
     setTimeout(()=>animateStep(4), 3200);
-
-    // Kick off image generation in parallel
-    const imgPromises = [
-      generateImage(result.exteriorPrompt, 'render1', 'Exterior View'),
-      generateImage(result.livingRoomPrompt, 'render2', 'Living Room'),
-      generateImage(result.kitchenPrompt, 'render3', 'Kitchen'),
-      generateImage(result.bathroomPrompt, 'render4', 'Primary Bathroom')
-    ];
 
     setTimeout(()=>{
       animateStep(5);
@@ -801,55 +795,14 @@ Please respond ONLY with a valid JSON object (no markdown, no backticks, no expl
       window.scrollTo({top:0,behavior:'smooth'});
     }, 4000);
 
-    await Promise.allSettled(imgPromises);
-
   } catch(err){
     gc.classList.remove('active');
     document.getElementById('step8').classList.add('active');
-    alert('Error generating design package. Please check your API key and try again.\n\n'+err.message);
+    showAlert('Error generating design package: ' + err.message, 'error');
     console.error(err);
   }
 }
 
-async function generateImage(promptText, containerId, label){
-  try {
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','x-api-key':state.apiKey,'anthropic-version':'2023-06-01'},
-      body: JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:100,
-        messages:[{role:'user',content:`Reply with only this exact text, no changes: IMAGE_PLACEHOLDER`}]
-      })
-    });
-    // Since DALL-E isn't directly accessible, we generate a beautiful SVG placeholder with the prompt context
-    renderImagePlaceholder(containerId, label, promptText);
-  } catch(e){
-    renderImagePlaceholder(containerId, label, promptText);
-  }
-}
-
-function renderImagePlaceholder(containerId, label, promptText){
-  const box = document.getElementById(containerId);
-  // Create styled placeholder with the prompt displayed elegantly
-  const colors = {
-    'Exterior View': ['#2D4A3E','#4A7A6A'],
-    'Living Room': ['#3A3228','#6A5A4A'],
-    'Kitchen': ['#2A3240','#4A5A70'],
-    'Primary Bathroom': ['#283040','#485060']
-  };
-  const [c1,c2] = colors[label] || ['#2D3A4A','#4A5A6A'];
-  box.innerHTML = `
-    <div style="width:100%;height:220px;background:linear-gradient(135deg,${c1},${c2});display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center;position:relative">
-      <div style="font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px">${label}</div>
-      <div style="font-size:12px;color:rgba(255,255,255,.75);line-height:1.55;max-width:260px">${promptText.substring(0,120)}…</div>
-      <div style="position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:10px;color:rgba(255,255,255,.35)">AI Rendering Prompt — Connect image API to display</div>
-    </div>
-    <div class="render-label">${label}</div>
-  `;
-}
-
-// ---- SHOW RESULTS ----
 function showResults(r){
   const typeNames = {detached:'Detached ADU', attached:'Attached ADU', garage:'Garage Conversion', jadu:'Junior ADU (JADU)'};
   const finishNames = {budget:'Budget / Builder-Grade', mid:'Mid-Range', high:'High-End / Luxury'};
@@ -857,7 +810,6 @@ function showResults(r){
   document.getElementById('resultClientName').textContent = state.clientName;
   document.getElementById('resultSubhead').textContent = `${state.sqft} sq ft · ${typeNames[state.type]||state.type} · ${finishNames[state.finish]||state.finish} · ${state.style}`;
 
-  // Specs
   document.getElementById('specGrid').innerHTML = [
     ['Type', typeNames[state.type]||state.type],
     ['Size', state.sqft.toLocaleString()+' sq ft'],
@@ -869,37 +821,30 @@ function showResults(r){
     ['Add-ons', state.addons.length || 'None']
   ].map(([l,v])=>`<div class="spec-tile"><div class="spec-tile-label">${l}</div><div class="spec-tile-val">${v}</div></div>`).join('');
 
-  // Floor plan desc
-  document.getElementById('floorPlanDesc').innerHTML = r.floorPlanDesc || '';
+  document.getElementById('floorPlanDesc').textContent = r.floorPlanDesc || '';
 
-  // Draw simple floor plan SVG
   drawFloorPlan();
 
-  // Finish summary
-  document.getElementById('finishSummary').innerHTML = r.finishSummary || '';
+  document.getElementById('finishSummary').textContent = r.finishSummary || '';
 
-  // Finish details
   if(r.finishDetails && r.finishDetails.length){
     document.getElementById('finishDetailGrid').innerHTML = r.finishDetails.map(d=>
-      `<div class="finish-detail-item"><div class="fd-cat">${d.category}</div><div class="fd-val">${d.spec}</div></div>`
+      `<div class="finish-detail-item"><div class="fd-cat">${escapeHtml(d.category)}</div><div class="fd-val">${escapeHtml(d.spec)}</div></div>`
     ).join('');
   }
 
-  // Add-ons
   document.getElementById('addonsList').innerHTML = state.addons.length
-    ? state.addons.map(a=>`<span class="addon-tag">✓ ${a}</span>`).join('')
+    ? state.addons.map(a=>`<span class="addon-tag">✓ ${escapeHtml(a)}</span>`).join('')
     : '<span class="addon-tag none">No upgrades selected</span>';
 
-  // Consultant notes
-  document.getElementById('consultantNotes').innerHTML = r.consultantNotes || '';
+  document.getElementById('consultantNotes').textContent = r.consultantNotes || '';
 }
 
 function drawFloorPlan(){
-  const beds = state.beds; const baths = state.baths; const sqft = state.sqft;
-  const w = 500; const h = 340;
+  const beds = state.beds;
+  const sqft = state.sqft;
   let rooms = [];
 
-  // Rough layout based on beds
   if(beds==='Studio'){
     rooms = [
       {x:20,y:20,w:280,h:200,label:'Living / Sleeping Area',fill:'#E8F0F8'},
@@ -933,16 +878,15 @@ function drawFloorPlan(){
       {x:20,y:170,w:150,h:150,label:'Bedroom 1',fill:'#EEE8F8'},
       {x:180,y:170,w:130,h:150,label:'Bedroom 2',fill:'#EEE8F8'},
       {x:320,y:170,w:120,h:150,label:'Bedroom 3',fill:'#EEE8F8'},
-      {x:450,y:20,w:30,h:300,label:'',fill:'transparent'},
-      {x:20,y:0,w:0,h:0,label:'',fill:'transparent'},
     ];
   }
 
-  const svgRooms = rooms.filter(r=>r.w>0).map(r=>`
-    <rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${r.fill}" stroke="#C8B8A8" stroke-width="1.5" rx="3"/>
-    <text x="${r.x+r.w/2}" y="${r.y+r.h/2-6}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#5A4A3A" font-weight="600">${r.label.split('/')[0].trim()}</text>
-    ${r.label.includes('/') ? `<text x="${r.x+r.w/2}" y="${r.y+r.h/2+10}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#7A6A5A">${r.label.split('/')[1]?.trim()||''}</text>` : ''}
-  `).join('');
+  const svgRooms = rooms.filter(r=>r.w>0).map(r=>{
+    const parts = r.label.split('/');
+    return `<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${r.fill}" stroke="#C8B8A8" stroke-width="1.5" rx="3"/>
+    <text x="${r.x+r.w/2}" y="${r.y+r.h/2-6}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#5A4A3A" font-weight="600">${parts[0].trim()}</text>
+    ${parts[1] ? `<text x="${r.x+r.w/2}" y="${r.y+r.h/2+10}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#7A6A5A">${parts[1].trim()}</text>` : ''}`;
+  }).join('');
 
   const compassSvg = `<g transform="translate(460,20)">
     <circle cx="16" cy="16" r="14" fill="white" stroke="#C8B8A8" stroke-width="1"/>
@@ -964,7 +908,27 @@ function drawFloorPlan(){
 function restart(){
   Object.assign(state,{type:'',beds:'',baths:'',sqft:600,style:'',site:'',finish:'',addons:[],purpose:'',vision:'',kitchen:'',bath:'',colors:''});
   document.getElementById('resultsCard').classList.remove('active');
+  clearAlerts();
   goTo(2);
+}
+
+function showAlert(msg, type='error'){
+  const container = document.getElementById('alertContainer');
+  const alert = document.createElement('div');
+  alert.className = 'alert ' + type;
+  alert.textContent = msg;
+  container.innerHTML = '';
+  container.appendChild(alert);
+}
+
+function clearAlerts(){
+  document.getElementById('alertContainer').innerHTML = '';
+}
+
+function escapeHtml(text){
+  const div = document.createElement('div');
+  div.textContent = text;
+  return div.innerHTML;
 }
 </script>
 </body>
