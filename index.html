@@ -7,15 +7,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --cream:#FAF7F2;--dark:#1C1814;--orange:#E8501A;--orange2:#C93D0A;
-  --tan:#E8E0D4;--tan2:#D4C8B8;--warm:#7C6A58;--white:#FFFFFF;
-  --green:#2D5A3D;--radius:16px;
-}
+:root{--cream:#FAF7F2;--dark:#1C1814;--orange:#E8501A;--orange2:#C93D0A;--tan:#E8E0D4;--tan2:#D4C8B8;--warm:#7C6A58;--white:#FFFFFF;--green:#2D5A3D;--radius:16px}
 body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);min-height:100vh;overflow-x:hidden}
 .wrap{max-width:860px;margin:0 auto;padding:0 20px 80px}
-
-/* HEADER */
 .header{display:flex;align-items:center;justify-content:space-between;padding:24px 0 20px;border-bottom:1px solid var(--tan)}
 .logo{display:flex;align-items:center;gap:10px}
 .logo-mark{width:38px;height:38px;background:linear-gradient(135deg,var(--orange),var(--orange2));border-radius:9px;display:flex;align-items:center;justify-content:center}
@@ -23,8 +17,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .logo-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;line-height:1.1}
 .logo-name span{display:block;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:400;color:var(--warm);letter-spacing:.6px;text-transform:uppercase}
 .header-tag{font-size:12px;color:var(--warm);background:var(--tan);padding:6px 14px;border-radius:100px;font-weight:500}
-
-/* PROGRESS */
 .progress-track{display:flex;align-items:center;gap:0;margin:28px 0 0;position:relative}
 .progress-track::before{content:'';position:absolute;top:14px;left:0;right:0;height:2px;background:var(--tan2);z-index:0}
 .step-dot{width:28px;height:28px;border-radius:50%;border:2px solid var(--tan2);background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;color:var(--dark);z-index:1}
@@ -32,16 +24,12 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .step-dot.active{background:var(--dark);border-color:var(--dark);color:white}
 .step-line{flex:1;height:2px;background:var(--tan2);z-index:0;transition:background .3s}
 .step-line.done{background:var(--orange)}
-
-/* CARD */
 .card{background:var(--white);border-radius:var(--radius);padding:36px;margin-top:28px;border:1px solid var(--tan);display:none;animation:fadeUp .3s ease}
 .card.active{display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
 .step-num{font-size:11px;font-weight:600;color:var(--orange);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}
 .card h2{font-family:'Playfair Display',serif;font-size:28px;font-weight:700;line-height:1.25;margin-bottom:8px}
 .card .sub{font-size:14px;color:var(--warm);line-height:1.65;margin-bottom:28px;max-width:520px}
-
-/* OPTION GRID */
 .opt-grid{display:grid;gap:12px;margin-bottom:28px}
 .opt-grid.cols2{grid-template-columns:1fr 1fr}
 .opt-grid.cols3{grid-template-columns:1fr 1fr 1fr}
@@ -54,24 +42,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);
 .opt-label{font-size:14px;font-weight:600;color:var(--dark);display:block}
 .opt-desc{font-size:12px;color:var(--warm);margin-top:2px;display:block;line-height:1.4}
 .opt-check{width:20px;height:20px;border-radius:50%;border:2px solid var(--tan2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s}
-.opt-btn.selected .opt-check{background:var(--orange);border-color:var(--orange)}
-.opt-btn.selected .opt-check::after{content:'✓';color:white;font-size:10px;font-weight:700}
+.opt-btn.selected .opt-check{background:var(--orange);border-color:var(--orange);content:'✓'}
 .opt-btn.multi .opt-check{border-radius:4px}
-
-/* SIZE SLIDER */
 .size-display{text-align:center;margin-bottom:20px}
 .size-num{font-family:'Playfair Display',serif;font-size:52px;font-weight:700;color:var(--orange);line-height:1}
 .size-unit{font-size:14px;color:var(--warm);margin-top:4px}
 .size-label-txt{font-size:13px;color:var(--dark);font-weight:600;margin-top:8px}
 .range-wrap{padding:0 8px;margin-bottom:12px}
-input[type=range]{width:100%;-webkit-appearance:none;height:4px;border-radius:2px;background:linear-gradient(to right,var(--orange) var(--pct,40%),var(--tan2) var(--pct,40%));outline:none}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:var(--dark);cursor:pointer;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.2)}
+input[type=range]{width:100%;appearance:none;height:4px;border-radius:2px;background:linear-gradient(to right,var(--orange) var(--pct,40%),var(--tan2) var(--pct,40%));outline:none}
+input[type=range]::-webkit-slider-thumb{appearance:none;width:24px;height:24px;border-radius:50%;background:var(--dark);cursor:pointer;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:var(--dark);cursor:pointer;border:3px solid white;box-shadow:0 2px 8px rgba(0,0,0,.2)}
 .size-presets{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:24px}
 .size-preset{background:var(--cream);border:1.5px solid var(--tan2);border-radius:8px;padding:8px 14px;font-size:12px;font-weight:600;cursor:pointer;transition:all .15s;color:var(--dark)}
 .size-preset:hover,.size-preset.active{border-color:var(--orange);background:#FEF3EE;color:var(--orange)}
-
-/* FINISH CARDS */
 .finish-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:28px}
 .finish-card{border:1.5px solid var(--tan2);border-radius:14px;overflow:hidden;cursor:pointer;transition:all .2s;background:var(--cream)}
 .finish-card:hover{border-color:var(--orange);transform:translateY(-2px);box-shadow:0 6px 20px rgba(232,80,26,.12)}
@@ -86,8 +69,6 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .finish-specs{font-size:11px;color:var(--warm);line-height:1.5}
 .finish-check{position:absolute;top:8px;right:8px;width:22px;height:22px;border-radius:50%;background:var(--orange);display:none;align-items:center;justify-content:center;color:white;font-size:11px;font-weight:700}
 .finish-card.selected .finish-check{display:flex}
-
-/* ADDONS */
 .addons-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
 .addon-btn{background:var(--cream);border:1.5px solid var(--tan2);border-radius:10px;padding:14px 16px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px;font-family:'DM Sans',sans-serif}
 .addon-btn:hover{border-color:var(--orange);background:#FEF3EE}
@@ -98,28 +79,19 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .addon-note{font-size:11px;color:var(--warm);display:block;margin-top:1px}
 .addon-cb{width:18px;height:18px;border-radius:4px;border:2px solid var(--tan2);flex-shrink:0;display:flex;align-items:center;justify-content:center;transition:all .15s}
 .addon-btn.selected .addon-cb{background:var(--orange);border-color:var(--orange)}
-.addon-btn.selected .addon-cb::after{content:'✓';color:white;font-size:10px;font-weight:700}
-
-/* TEXTAREA */
 .txt-area{width:100%;border:1.5px solid var(--tan2);border-radius:10px;padding:14px 16px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--dark);resize:vertical;min-height:90px;outline:none;transition:border-color .15s}
 .txt-area:focus{border-color:var(--orange);background:white}
 .char-hint{font-size:11px;color:var(--warm);margin-top:6px;text-align:right}
-
-/* API KEY INPUT */
 .api-row{display:flex;gap:10px;margin-bottom:8px;align-items:center}
 .api-input{flex:1;border:1.5px solid var(--tan2);border-radius:10px;padding:12px 14px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--dark);outline:none;background:var(--cream);transition:border-color .15s}
 .api-input:focus{border-color:var(--orange)}
 .api-note{font-size:12px;color:var(--warm);margin-bottom:20px;display:flex;align-items:center;gap:6px}
-
-/* NAV */
 .nav-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
 .back-btn{background:none;border:1.5px solid var(--tan2);border-radius:10px;padding:12px 24px;font-size:14px;font-weight:500;color:var(--warm);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif}
 .back-btn:hover{border-color:var(--dark);color:var(--dark)}
 .next-btn{background:linear-gradient(135deg,var(--orange),var(--orange2));border:none;border-radius:10px;padding:13px 32px;font-size:14px;font-weight:600;color:white;cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif}
 .next-btn:hover:not(:disabled){box-shadow:0 4px 18px rgba(232,80,26,.4);transform:translateY(-1px)}
 .next-btn:disabled{opacity:.4;cursor:not-allowed;transform:none}
-
-/* GENERATING */
 .gen-card{background:var(--white);border-radius:var(--radius);padding:56px 36px;text-align:center;border:1px solid var(--tan);display:none;margin-top:28px}
 .gen-card.active{display:block}
 .gen-spinner{width:60px;height:60px;border:3px solid var(--tan);border-top-color:var(--orange);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 24px}
@@ -131,8 +103,6 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .gen-step.done{color:var(--green);background:#EAF4EE}
 .gen-step.active{color:var(--dark);background:#FEF3EE;font-weight:500}
 .gen-step-icon{font-size:16px;width:20px;text-align:center;flex-shrink:0}
-
-/* RESULTS */
 .results-card{background:var(--white);border-radius:var(--radius);border:1px solid var(--tan);margin-top:28px;display:none;overflow:hidden}
 .results-card.active{display:block}
 .results-header{background:linear-gradient(135deg,var(--dark),#2C2420);padding:32px 36px;color:white}
@@ -140,39 +110,31 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .results-header p{font-size:14px;color:rgba(255,255,255,.6)}
 .client-name{color:var(--orange);font-style:italic}
 .results-body{padding:36px}
-
 .section-head{display:flex;align-items:center;gap:10px;margin-bottom:18px;margin-top:32px}
 .section-head:first-child{margin-top:0}
 .section-head h3{font-family:'Playfair Display',serif;font-size:20px}
 .section-num{width:28px;height:28px;background:var(--orange);border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:12px;font-weight:700;flex-shrink:0}
-
 .spec-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:28px}
 .spec-tile{background:var(--cream);border-radius:10px;padding:14px 16px}
 .spec-tile-label{font-size:11px;color:var(--warm);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-bottom:5px}
 .spec-tile-val{font-size:15px;font-weight:600;color:var(--dark)}
-
 .render-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px}
 .render-box{border-radius:12px;overflow:hidden;border:1px solid var(--tan);background:var(--cream);min-height:220px;position:relative;display:flex;align-items:center;justify-content:center}
 .render-box img{width:100%;height:100%;object-fit:cover;display:block}
 .render-label{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(28,24,20,.7));padding:20px 14px 12px;color:white;font-size:12px;font-weight:600}
 .render-placeholder{width:100%;height:220px;background:linear-gradient(135deg,#2D4A3E,#4A7A6A);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;text-align:center}
 .render-placeholder-text{font-size:12px;color:rgba(255,255,255,.75);line-height:1.55;max-width:260px}
-
 .floor-plan-box{background:var(--cream);border-radius:12px;padding:24px;border:1px solid var(--tan);margin-bottom:28px}
 .floor-plan-svg-wrap{text-align:center}
-
 .ai-text-box{background:var(--cream);border-radius:12px;padding:22px 24px;border:1px solid var(--tan);margin-bottom:24px;font-size:14px;line-height:1.75;color:var(--dark)}
 .ai-text-box strong{color:var(--orange)}
-
 .finish-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:24px}
 .finish-detail-item{background:var(--cream);border-radius:8px;padding:12px 14px;border-left:3px solid var(--orange)}
 .fd-cat{font-size:11px;font-weight:700;color:var(--warm);text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
 .fd-val{font-size:13px;color:var(--dark);font-weight:500}
-
 .addons-list{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
 .addon-tag{background:var(--cream);border:1px solid var(--tan2);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:500;color:var(--dark)}
 .addon-tag.none{color:var(--warm);font-style:italic}
-
 .cta-section{background:linear-gradient(135deg,#1C1814,#2C2420);border-radius:14px;padding:28px;text-align:center;margin-top:8px}
 .cta-section h3{font-family:'Playfair Display',serif;font-size:22px;color:white;margin-bottom:8px}
 .cta-section p{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:20px;line-height:1.55}
@@ -181,755 +143,316 @@ input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;bac
 .cta-primary:hover{box-shadow:0 4px 18px rgba(232,80,26,.4);transform:translateY(-1px)}
 .cta-secondary{background:none;border:1.5px solid rgba(255,255,255,.3);border-radius:10px;padding:12px 28px;font-size:14px;font-weight:500;color:white;cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
 .cta-secondary:hover{border-color:white}
-
 .restart-btn{display:block;margin:20px auto 0;background:none;border:1.5px solid var(--tan2);border-radius:10px;padding:10px 24px;font-size:13px;color:var(--warm);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .15s}
 .restart-btn:hover{border-color:var(--orange);color:var(--orange)}
-
 .divider{border:none;border-top:1px solid var(--tan);margin:28px 0}
-
 .alert{padding:14px 16px;border-radius:10px;margin-bottom:16px;font-size:13px;line-height:1.6}
 .alert.error{background:#FFE8E8;border:1px solid #FFB3B3;color:#8B0000}
 .alert.success{background:#E8F5EE;border:1px solid #B3E5D0;color:#0B5A3A}
-
-@media(max-width:600px){
-  .opt-grid.cols3,.opt-grid.cols4{grid-template-columns:1fr 1fr}
-  .finish-grid{grid-template-columns:1fr}
-  .addons-grid,.render-grid,.spec-grid,.finish-detail-grid{grid-template-columns:1fr}
-  .card{padding:24px}
-}
+@media(max-width:600px){.opt-grid.cols3,.opt-grid.cols4{grid-template-columns:1fr 1fr}.finish-grid{grid-template-columns:1fr}.addons-grid,.render-grid,.spec-grid,.finish-detail-grid{grid-template-columns:1fr}.card{padding:24px}}
 </style>
 </head>
 <body>
 <div class="wrap">
-
 <div class="header">
-  <div class="logo">
-    <div class="logo-mark">
-      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22" fill="none" stroke="white" stroke-width="1.5"/></svg>
-    </div>
-    <div class="logo-name">RC Remodeling<span>ADU Consultation Studio</span></div>
-  </div>
-  <div class="header-tag">Confidential — Client Use Only</div>
+<div class="logo">
+<div class="logo-mark">
+<svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22" fill="none" stroke="white" stroke-width="1.5"/></svg>
+</div>
+<div class="logo-name">RC Remodeling<span>ADU Consultation Studio</span></div>
+</div>
+<div class="header-tag">Confidential — Client Use Only</div>
 </div>
 
-<!-- PROGRESS -->
 <div class="progress-track" id="progressTrack">
-  <div class="step-dot active" id="dot1">1</div>
-  <div class="step-line" id="line1"></div>
-  <div class="step-dot" id="dot2">2</div>
-  <div class="step-line" id="line2"></div>
-  <div class="step-dot" id="dot3">3</div>
-  <div class="step-line" id="line3"></div>
-  <div class="step-dot" id="dot4">4</div>
-  <div class="step-line" id="line4"></div>
-  <div class="step-dot" id="dot5">5</div>
-  <div class="step-line" id="line5"></div>
-  <div class="step-dot" id="dot6">6</div>
-  <div class="step-line" id="line6"></div>
-  <div class="step-dot" id="dot7">7</div>
-  <div class="step-line" id="line7"></div>
-  <div class="step-dot" id="dot8">8</div>
+<div class="step-dot active" id="dot1">1</div><div class="step-line" id="line1"></div>
+<div class="step-dot" id="dot2">2</div><div class="step-line" id="line2"></div>
+<div class="step-dot" id="dot3">3</div><div class="step-line" id="line3"></div>
+<div class="step-dot" id="dot4">4</div><div class="step-line" id="line4"></div>
+<div class="step-dot" id="dot5">5</div><div class="step-line" id="line5"></div>
+<div class="step-dot" id="dot6">6</div><div class="step-line" id="line6"></div>
+<div class="step-dot" id="dot7">7</div><div class="step-line" id="line7"></div>
+<div class="step-dot" id="dot8">8</div>
 </div>
 
-<!-- STEP 1: API KEY + CLIENT NAME -->
 <div class="card active" id="step1">
-  <div class="step-num">Setup</div>
-  <h2>Welcome to the<br><em style="font-style:italic;color:var(--orange)">ADU Design Studio</em></h2>
-  <p class="sub">Enter your Anthropic API key and the client's name to begin their personalized ADU consultation.</p>
-  <div style="margin-bottom:20px">
-    <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Anthropic API Key</label>
-    <div class="api-row">
-      <input class="api-input" type="password" id="apiKeyInput" placeholder="sk-ant-..." oninput="checkStep1()">
-    </div>
-    <div class="api-note">🔒 Your key is used only for this session and never stored</div>
-  </div>
-  <div style="margin-bottom:28px">
-    <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Client Name</label>
-    <input class="api-input" type="text" id="clientNameInput" placeholder="e.g. Sarah & James Chen" oninput="checkStep1()" style="width:100%">
-  </div>
-  <div class="nav-row">
-    <span></span>
-    <button class="next-btn" id="next1" disabled onclick="goTo(2)">Begin Consultation →</button>
-  </div>
+<div class="step-num">Setup</div>
+<h2>Welcome to the<br><em style="font-style:italic;color:var(--orange)">ADU Design Studio</em></h2>
+<p class="sub">Enter your Anthropic API key and the client's name to begin their personalized ADU consultation.</p>
+<div style="margin-bottom:20px">
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Anthropic API Key</label>
+<div class="api-row">
+<input class="api-input" type="password" id="apiKeyInput" placeholder="sk-ant-..." oninput="checkStep1()">
+</div>
+<div class="api-note">🔒 Your key is used only for this session and never stored</div>
+</div>
+<div style="margin-bottom:28px">
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Client Name</label>
+<input class="api-input" type="text" id="clientNameInput" placeholder="e.g. Sarah & James Chen" oninput="checkStep1()" style="width:100%">
+</div>
+<div class="nav-row">
+<span></span>
+<button class="next-btn" id="next1" disabled onclick="goTo(2)">Begin Consultation →</button>
+</div>
 </div>
 
-<!-- STEP 2: ADU TYPE -->
 <div class="card" id="step2">
-  <div class="step-num">Step 1 of 7 — Project Type</div>
-  <h2>What type of ADU<br>are we designing?</h2>
-  <p class="sub">Select the structure type that fits the property and the client's goals.</p>
-  <div class="opt-grid cols2">
-    <button class="opt-btn" onclick="sel(this,'type','detached')">
-      <span class="opt-icon">🏠</span>
-      <span class="opt-text"><span class="opt-label">Detached ADU</span><span class="opt-desc">Standalone structure in the backyard</span></span>
-      <span class="opt-check"></span>
-    </button>
-    <button class="opt-btn" onclick="sel(this,'type','attached')">
-      <span class="opt-icon">🔗</span>
-      <span class="opt-text"><span class="opt-label">Attached ADU</span><span class="opt-desc">Connected to the main house</span></span>
-      <span class="opt-check"></span>
-    </button>
-    <button class="opt-btn" onclick="sel(this,'type','garage')">
-      <span class="opt-icon">🚗</span>
-      <span class="opt-text"><span class="opt-label">Garage Conversion</span><span class="opt-desc">Convert existing garage to living space</span></span>
-      <span class="opt-check"></span>
-    </button>
-    <button class="opt-btn" onclick="sel(this,'type','jadu')">
-      <span class="opt-icon">🏡</span>
-      <span class="opt-text"><span class="opt-label">Junior ADU (JADU)</span><span class="opt-desc">Interior conversion, up to 500 sq ft</span></span>
-      <span class="opt-check"></span>
-    </button>
-  </div>
-  <div class="nav-row">
-    <button class="back-btn" onclick="goTo(1)">← Back</button>
-    <button class="next-btn" id="next2" disabled onclick="goTo(3)">Continue →</button>
-  </div>
+<div class="step-num">Step 1 of 7 — Project Type</div>
+<h2>What type of ADU are we designing?</h2>
+<p class="sub">Select the structure type that fits the property and the client's goals.</p>
+<div class="opt-grid cols2">
+<button class="opt-btn" onclick="sel(this,'type','detached')"><span class="opt-icon">🏠</span><span class="opt-text"><span class="opt-label">Detached ADU</span><span class="opt-desc">Standalone structure in the backyard</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'type','attached')"><span class="opt-icon">🔗</span><span class="opt-text"><span class="opt-label">Attached ADU</span><span class="opt-desc">Connected to the main house</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'type','garage')"><span class="opt-icon">🚗</span><span class="opt-text"><span class="opt-label">Garage Conversion</span><span class="opt-desc">Convert existing garage to living space</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'type','jadu')"><span class="opt-icon">🏡</span><span class="opt-text"><span class="opt-label">Junior ADU (JADU)</span><span class="opt-desc">Interior conversion, up to 500 sq ft</span></span><span class="opt-check"></span></button>
+</div>
+<div class="nav-row"><button class="back-btn" onclick="goTo(1)">← Back</button><button class="next-btn" id="next2" disabled onclick="goTo(3)">Continue →</button></div>
 </div>
 
-<!-- STEP 3: LAYOUT -->
 <div class="card" id="step3">
-  <div class="step-num">Step 2 of 7 — Layout</div>
-  <h2>Size, bedrooms<br>&amp; bathrooms</h2>
-  <p class="sub">Define the footprint and layout of the ADU.</p>
-
-  <div style="margin-bottom:24px">
-    <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:16px">Square Footage</label>
-    <div class="size-display">
-      <div class="size-num" id="sqftDisplay">600</div>
-      <div class="size-unit">square feet</div>
-      <div class="size-label-txt" id="sqftLabel">Comfortable 1 Bed / 1 Bath</div>
-    </div>
-    <div class="range-wrap">
-      <input type="range" id="sqftRange" min="200" max="1200" value="600" step="50" oninput="onSqft(this)" style="--pct:36.4%">
-    </div>
-    <div class="size-presets">
-      <button class="size-preset" onclick="setSqft(300)">300 sqft<br><span style="font-size:10px;font-weight:400">Studio</span></button>
-      <button class="size-preset" onclick="setSqft(450)">450 sqft<br><span style="font-size:10px;font-weight:400">Lg Studio</span></button>
-      <button class="size-preset active" onclick="setSqft(600)">600 sqft<br><span style="font-size:10px;font-weight:400">1 Bed / 1 Ba</span></button>
-      <button class="size-preset" onclick="setSqft(750)">750 sqft<br><span style="font-size:10px;font-weight:400">1 Bed / 1 Ba</span></button>
-      <button class="size-preset" onclick="setSqft(900)">900 sqft<br><span style="font-size:10px;font-weight:400">2 Bed / 1 Ba</span></button>
-      <button class="size-preset" onclick="setSqft(1000)">1,000 sqft<br><span style="font-size:10px;font-weight:400">2 Bed / 2 Ba</span></button>
-      <button class="size-preset" onclick="setSqft(1200)">1,200 sqft<br><span style="font-size:10px;font-weight:400">3 Bed / 2 Ba</span></button>
-    </div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px">
-    <div>
-      <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:10px">Bedrooms</label>
-      <div class="opt-grid cols2" style="gap:8px">
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','Studio')"><span class="opt-icon" style="font-size:16px">🛋️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">Studio</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','1 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1 Bed</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','2 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2 Bed</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','3 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">3 Bed</span></span><span class="opt-check"></span></button>
-      </div>
-    </div>
-    <div>
-      <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:10px">Bathrooms</label>
-      <div class="opt-grid cols2" style="gap:8px">
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1 Bath</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1.5 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1.5 Bath</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2 Bath</span></span><span class="opt-check"></span></button>
-        <button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2.5 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2.5 Bath</span></span><span class="opt-check"></span></button>
-      </div>
-    </div>
-  </div>
-
-  <div class="nav-row">
-    <button class="back-btn" onclick="goTo(2)">← Back</button>
-    <button class="next-btn" id="next3" disabled onclick="goTo(4)">Continue →</button>
-  </div>
+<div class="step-num">Step 2 of 7 — Layout</div>
+<h2>Size, bedrooms &amp; bathrooms</h2>
+<p class="sub">Define the footprint and layout of the ADU.</p>
+<div style="margin-bottom:24px">
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:16px">Square Footage</label>
+<div class="size-display"><div class="size-num" id="sqftDisplay">600</div><div class="size-unit">square feet</div><div class="size-label-txt" id="sqftLabel">Comfortable 1 Bed / 1 Bath</div></div>
+<div class="range-wrap"><input type="range" id="sqftRange" min="200" max="1200" value="600" step="50" oninput="onSqft(this)" style="--pct:36.4%"></div>
+<div class="size-presets">
+<button class="size-preset" onclick="setSqft(300)">300 sqft<br><span style="font-size:10px;font-weight:400">Studio</span></button>
+<button class="size-preset" onclick="setSqft(450)">450 sqft<br><span style="font-size:10px;font-weight:400">Lg Studio</span></button>
+<button class="size-preset active" onclick="setSqft(600)">600 sqft<br><span style="font-size:10px;font-weight:400">1 Bed / 1 Ba</span></button>
+<button class="size-preset" onclick="setSqft(750)">750 sqft<br><span style="font-size:10px;font-weight:400">1 Bed / 1 Ba</span></button>
+<button class="size-preset" onclick="setSqft(900)">900 sqft<br><span style="font-size:10px;font-weight:400">2 Bed / 1 Ba</span></button>
+<button class="size-preset" onclick="setSqft(1000)">1,000 sqft<br><span style="font-size:10px;font-weight:400">2 Bed / 2 Ba</span></button>
+<button class="size-preset" onclick="setSqft(1200)">1,200 sqft<br><span style="font-size:10px;font-weight:400">3 Bed / 2 Ba</span></button>
+</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px">
+<div><label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:10px">Bedrooms</label>
+<div class="opt-grid cols2" style="gap:8px">
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','Studio')"><span class="opt-icon" style="font-size:16px">🛋️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">Studio</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','1 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1 Bed</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','2 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2 Bed</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'beds','3 Bed')"><span class="opt-icon" style="font-size:16px">🛏️</span><span class="opt-text"><span class="opt-label" style="font-size:12px">3 Bed</span></span><span class="opt-check"></span></button>
+</div></div>
+<div><label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:10px">Bathrooms</label>
+<div class="opt-grid cols2" style="gap:8px">
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1 Bath</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','1.5 Bath')"><span class="opt-icon" style="font-size:16px">🚿</span><span class="opt-text"><span class="opt-label" style="font-size:12px">1.5 Bath</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2 Bath</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" style="padding:12px" onclick="sel(this,'baths','2.5 Bath')"><span class="opt-icon" style="font-size:16px">🛁</span><span class="opt-text"><span class="opt-label" style="font-size:12px">2.5 Bath</span></span><span class="opt-check"></span></button>
+</div></div>
+</div>
+<div class="nav-row"><button class="back-btn" onclick="goTo(2)">← Back</button><button class="next-btn" id="next3" disabled onclick="goTo(4)">Continue →</button></div>
 </div>
 
-<!-- STEP 4: STYLE + SITE -->
 <div class="card" id="step4">
-  <div class="step-num">Step 3 of 7 — Style &amp; Site</div>
-  <h2>Architectural style<br>&amp; site conditions</h2>
-  <p class="sub">Style sets the visual direction. Site conditions affect foundation and grading costs.</p>
-
-  <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:12px">Architectural Style</label>
-  <div class="opt-grid cols3" style="margin-bottom:24px">
-    <button class="opt-btn" onclick="sel(this,'style','Modern / Contemporary')"><span class="opt-icon">🔲</span><span class="opt-text"><span class="opt-label">Modern</span><span class="opt-desc">Clean lines, minimalist</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Spanish / Mediterranean')"><span class="opt-icon">🏛️</span><span class="opt-text"><span class="opt-label">Spanish / Med</span><span class="opt-desc">Arches, warm tones</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Craftsman / Traditional')"><span class="opt-icon">🪵</span><span class="opt-text"><span class="opt-label">Craftsman</span><span class="opt-desc">Details, wood</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Farmhouse')"><span class="opt-icon">🌾</span><span class="opt-text"><span class="opt-label">Farmhouse</span><span class="opt-desc">Board & batten</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Mid-Century Modern')"><span class="opt-icon">🌿</span><span class="opt-text"><span class="opt-label">Mid-Century</span><span class="opt-desc">Retro mod</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'style','Match Main House')"><span class="opt-icon">🏠</span><span class="opt-text"><span class="opt-label">Match House</span><span class="opt-desc">Mirror existing</span></span><span class="opt-check"></span></button>
-  </div>
-
-  <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:12px">Site Conditions</label>
-  <div class="opt-grid cols3" style="margin-bottom:28px">
-    <button class="opt-btn" onclick="sel(this,'site','flat')"><span class="opt-icon">⬜</span><span class="opt-text"><span class="opt-label">Flat / Level</span><span class="opt-desc">Standard grading</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'site','gentle')"><span class="opt-icon">📐</span><span class="opt-text"><span class="opt-label">Gentle Slope</span><span class="opt-desc">Moderate cut/fill</span></span><span class="opt-check"></span></button>
-    <button class="opt-btn" onclick="sel(this,'site','hillside')"><span class="opt-icon">⛰️</span><span class="opt-text"><span class="opt-label">Hillside / Steep</span><span class="opt-desc">Deep excavation</span></span><span class="opt-check"></span></button>
-  </div>
-
-  <div class="nav-row">
-    <button class="back-btn" onclick="goTo(3)">← Back</button>
-    <button class="next-btn" id="next4" disabled onclick="goTo(5)">Continue →</button>
-  </div>
+<div class="step-num">Step 3 of 7 — Style &amp; Site</div>
+<h2>Architectural style &amp; site conditions</h2>
+<p class="sub">Style sets the visual direction. Site conditions affect foundation and grading costs.</p>
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:12px">Architectural Style</label>
+<div class="opt-grid cols3" style="margin-bottom:24px">
+<button class="opt-btn" onclick="sel(this,'style','Modern / Contemporary')"><span class="opt-icon">🔲</span><span class="opt-text"><span class="opt-label">Modern</span><span class="opt-desc">Clean lines, minimalist</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'style','Spanish / Mediterranean')"><span class="opt-icon">🏛️</span><span class="opt-text"><span class="opt-label">Spanish / Med</span><span class="opt-desc">Arches, warm tones</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'style','Craftsman / Traditional')"><span class="opt-icon">🪵</span><span class="opt-text"><span class="opt-label">Craftsman</span><span class="opt-desc">Details, wood</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'style','Farmhouse')"><span class="opt-icon">🌾</span><span class="opt-text"><span class="opt-label">Farmhouse</span><span class="opt-desc">Board & batten</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'style','Mid-Century Modern')"><span class="opt-icon">🌿</span><span class="opt-text"><span class="opt-label">Mid-Century</span><span class="opt-desc">Retro mod</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'style','Match Main House')"><span class="opt-icon">🏠</span><span class="opt-text"><span class="opt-label">Match House</span><span class="opt-desc">Mirror existing</span></span><span class="opt-check"></span></button>
+</div>
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:12px">Site Conditions</label>
+<div class="opt-grid cols3" style="margin-bottom:28px">
+<button class="opt-btn" onclick="sel(this,'site','flat')"><span class="opt-icon">⬜</span><span class="opt-text"><span class="opt-label">Flat / Level</span><span class="opt-desc">Standard grading</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'site','gentle')"><span class="opt-icon">📐</span><span class="opt-text"><span class="opt-label">Gentle Slope</span><span class="opt-desc">Moderate cut/fill</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'site','hillside')"><span class="opt-icon">⛰️</span><span class="opt-text"><span class="opt-label">Hillside / Steep</span><span class="opt-desc">Deep excavation</span></span><span class="opt-check"></span></button>
+</div>
+<div class="nav-row"><button class="back-btn" onclick="goTo(3)">← Back</button><button class="next-btn" id="next4" disabled onclick="goTo(5)">Continue →</button></div>
 </div>
 
-<!-- STEP 5: FINISH TIER -->
 <div class="card" id="step5">
-  <div class="step-num">Step 4 of 7 — Finish Level</div>
-  <h2>What finish level<br>is the client looking for?</h2>
-  <p class="sub">This shapes every material selection, from cabinets to countertops to flooring.</p>
-  <div class="finish-grid">
-    <div class="finish-card" onclick="selFinish(this,'budget')">
-      <div class="finish-swatch budget">🔨<div class="finish-check">✓</div></div>
-      <div class="finish-body">
-        <div class="finish-tier">Budget</div>
-        <div class="finish-name">Builder-Grade</div>
-        <div class="finish-specs">LVP flooring · Laminate counters · Thermofoil cabinets · Fiberglass tub · Standard fixtures · $327–$482/sqft</div>
-      </div>
-    </div>
-    <div class="finish-card" onclick="selFinish(this,'mid')">
-      <div class="finish-swatch mid">🏗️<div class="finish-check">✓</div></div>
-      <div class="finish-body">
-        <div class="finish-tier">Mid-Range ★ Most Popular</div>
-        <div class="finish-name">Quality &amp; Value</div>
-        <div class="finish-specs">Premium LVP or porcelain · Quartz counters · Shaker cabinets · Walk-in shower · Matte black fixtures · $341–$497/sqft</div>
-      </div>
-    </div>
-    <div class="finish-card" onclick="selFinish(this,'high')">
-      <div class="finish-swatch high">✨<div class="finish-check">✓</div></div>
-      <div class="finish-body">
-        <div class="finish-tier">High-End</div>
-        <div class="finish-name">Custom / Luxury</div>
-        <div class="finish-specs">Engineered hardwood · Natural stone · Custom cabinetry · Freestanding tub · Designer fixtures · $365–$521/sqft</div>
-      </div>
-    </div>
-  </div>
-  <div class="nav-row">
-    <button class="back-btn" onclick="goTo(4)">← Back</button>
-    <button class="next-btn" id="next5" disabled onclick="goTo(6)">Continue →</button>
-  </div>
+<div class="step-num">Step 4 of 7 — Finish Level</div>
+<h2>What finish level is the client looking for?</h2>
+<p class="sub">This shapes every material selection, from cabinets to countertops to flooring.</p>
+<div class="finish-grid">
+<div class="finish-card" onclick="selFinish(this,'budget')"><div class="finish-swatch budget">🔨<div class="finish-check">✓</div></div><div class="finish-body"><div class="finish-tier">Budget</div><div class="finish-name">Builder-Grade</div><div class="finish-specs">LVP flooring · Laminate counters · Thermofoil cabinets · Fiberglass tub · Standard fixtures · $327–$482/sqft</div></div></div>
+<div class="finish-card" onclick="selFinish(this,'mid')"><div class="finish-swatch mid">🏗️<div class="finish-check">✓</div></div><div class="finish-body"><div class="finish-tier">Mid-Range ★ Most Popular</div><div class="finish-name">Quality &amp; Value</div><div class="finish-specs">Premium LVP or porcelain · Quartz counters · Shaker cabinets · Walk-in shower · Matte black fixtures · $341–$497/sqft</div></div></div>
+<div class="finish-card" onclick="selFinish(this,'high')"><div class="finish-swatch high">✨<div class="finish-check">✓</div></div><div class="finish-body"><div class="finish-tier">High-End</div><div class="finish-name">Custom / Luxury</div><div class="finish-specs">Engineered hardwood · Natural stone · Custom cabinetry · Freestanding tub · Designer fixtures · $365–$521/sqft</div></div></div>
+</div>
+<div class="nav-row"><button class="back-btn" onclick="goTo(4)">← Back</button><button class="next-btn" id="next5" disabled onclick="goTo(6)">Continue →</button></div>
 </div>
 
-<!-- STEP 6: ADD-ONS -->
 <div class="card" id="step6">
-  <div class="step-num">Step 5 of 7 — Add-Ons &amp; Upgrades</div>
-  <h2>Additional features<br>&amp; upgrades</h2>
-  <p class="sub">Select everything the client wants to include. Multiple selections allowed.</p>
-  <div class="addons-grid">
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Deck / Patio')"><span class="addon-icon">🪵</span><span class="addon-info"><span class="addon-name">Deck / Patio</span><span class="addon-note">Outdoor living space</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Solar Panels')"><span class="addon-icon">☀️</span><span class="addon-info"><span class="addon-name">Solar Panels</span><span class="addon-note">Renewable energy</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'EV Charger')"><span class="addon-icon">⚡</span><span class="addon-info"><span class="addon-name">EV Charger</span><span class="addon-note">Level 2 charging</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Smart Home System')"><span class="addon-icon">🏠</span><span class="addon-info"><span class="addon-name">Smart Home System</span><span class="addon-note">Connected controls</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Carport')"><span class="addon-icon">🚗</span><span class="addon-info"><span class="addon-name">Carport</span><span class="addon-note">Covered parking</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Laundry Room')"><span class="addon-icon">👕</span><span class="addon-info"><span class="addon-name">In-Unit Laundry</span><span class="addon-note">Washer / dryer</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Premium Appliances')"><span class="addon-icon">🍳</span><span class="addon-info"><span class="addon-name">Premium Appliances</span><span class="addon-note">Stainless suite</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Tankless Water Heater')"><span class="addon-icon">🔥</span><span class="addon-info"><span class="addon-name">Tankless Water Heater</span><span class="addon-note">On-demand hot water</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Radiant Floor Heating')"><span class="addon-icon">🌡️</span><span class="addon-info"><span class="addon-name">Radiant Floor Heating</span><span class="addon-note">Under-floor warmth</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Vaulted Ceilings')"><span class="addon-icon">🔺</span><span class="addon-info"><span class="addon-name">Vaulted Ceilings</span><span class="addon-note">High open space</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Skylights')"><span class="addon-icon">🌤️</span><span class="addon-info"><span class="addon-name">Skylights</span><span class="addon-note">Natural light</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Custom Built-Ins')"><span class="addon-icon">📚</span><span class="addon-info"><span class="addon-name">Custom Built-Ins</span><span class="addon-note">Storage solutions</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Energy-Efficient Windows')"><span class="addon-icon">🪟</span><span class="addon-info"><span class="addon-name">Upgraded Windows</span><span class="addon-note">High performance</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Retaining Wall')"><span class="addon-icon">🧱</span><span class="addon-info"><span class="addon-name">Retaining Wall</span><span class="addon-note">Structural support</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Privacy Fencing / Landscaping')"><span class="addon-icon">🌿</span><span class="addon-info"><span class="addon-name">Privacy Fencing</span><span class="addon-note">Landscaping</span></span><span class="addon-cb"></span></button>
-    <button class="addon-btn multi" onclick="toggleAddon(this,'Security Cameras')"><span class="addon-icon">📷</span><span class="addon-info"><span class="addon-name">Security Cameras</span><span class="addon-note">Home monitoring</span></span><span class="addon-cb"></span></button>
-  </div>
-  <div class="nav-row">
-    <button class="back-btn" onclick="goTo(5)">← Back</button>
-    <button class="next-btn" onclick="goTo(7)">Continue →</button>
-  </div>
+<div class="step-num">Step 5 of 7 — Add-Ons &amp; Upgrades</div>
+<h2>Additional features &amp; upgrades</h2>
+<p class="sub">Select everything the client wants to include. Multiple selections allowed.</p>
+<div class="addons-grid" id="addonsGrid"></div>
+<div class="nav-row"><button class="back-btn" onclick="goTo(5)">← Back</button><button class="next-btn" onclick="goTo(7)">Continue →</button></div>
 </div>
 
-<!-- STEP 7: CLIENT VISION -->
 <div class="card" id="step7">
-  <div class="step-num">Step 6 of 7 — Client Vision</div>
-  <h2>In their own words</h2>
-  <p class="sub">Have the client describe their dream ADU. The more detail, the better the AI renderings.</p>
-
-  <div style="margin-bottom:16px">
-    <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Overall Vision & Feel</label>
-    <textarea class="txt-area" id="visionInput" placeholder="e.g. We want it to feel like a luxury hotel suite — light and airy with big windows. The kitchen should be open to the living area. Very modern." oninput="checkStep7()"></textarea>
-    <div class="char-hint" id="visionCount">0 / 50 characters minimum</div>
-  </div>
-
-  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
-    <div>
-      <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Kitchen Preferences</label>
-      <textarea class="txt-area" id="kitchenInput" placeholder="e.g. Open kitchen with island, quartz waterfall countertop, panel-ready fridge, gas range..." style="min-height:70px"></textarea>
-    </div>
-    <div>
-      <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Bathroom Preferences</label>
-      <textarea class="txt-area" id="bathInput" placeholder="e.g. Wet room shower, freestanding tub, double vanity, heated floors, matte black fixtures..." style="min-height:70px"></textarea>
-    </div>
-  </div>
-
-  <div style="margin-bottom:20px">
-    <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Color Palette &amp; Materials</label>
-    <textarea class="txt-area" id="colorsInput" placeholder="e.g. Warm whites, natural oak wood, terracotta accents, brushed gold hardware, Zellige tile backsplash..." style="min-height:60px"></textarea>
-  </div>
-
-  <div style="margin-bottom:28px">
-    <label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Primary Purpose</label>
-    <div class="opt-grid cols3" style="margin-bottom:0">
-      <button class="opt-btn" onclick="sel(this,'purpose','Rental Income')"><span class="opt-icon">💰</span><span class="opt-text"><span class="opt-label">Rental Income</span></span><span class="opt-check"></span></button>
-      <button class="opt-btn" onclick="sel(this,'purpose','Family Member')"><span class="opt-icon">👨‍👩‍👧</span><span class="opt-text"><span class="opt-label">Family Housing</span></span><span class="opt-check"></span></button>
-      <button class="opt-btn" onclick="sel(this,'purpose','Personal Use / Office')"><span class="opt-icon">🏡</span><span class="opt-text"><span class="opt-label">Personal / Office</span></span><span class="opt-check"></span></button>
-    </div>
-  </div>
-
-  <div class="nav-row">
-    <button class="back-btn" onclick="goTo(6)">← Back</button>
-    <button class="next-btn" id="next7" disabled onclick="goTo(8)">Continue →</button>
-  </div>
+<div class="step-num">Step 6 of 7 — Client Vision</div>
+<h2>In their own words</h2>
+<p class="sub">Have the client describe their dream ADU. The more detail, the better the AI renderings.</p>
+<div style="margin-bottom:16px">
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Overall Vision & Feel</label>
+<textarea class="txt-area" id="visionInput" placeholder="e.g. We want it to feel like a luxury hotel suite — light and airy with big windows. The kitchen should be open to the living area. Very modern." oninput="checkStep7()"></textarea>
+<div class="char-hint" id="visionCount">0 / 50 characters minimum</div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px">
+<div><label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Kitchen Preferences</label><textarea class="txt-area" id="kitchenInput" placeholder="e.g. Open kitchen with island, quartz waterfall countertop, panel-ready fridge, gas range..." style="min-height:70px"></textarea></div>
+<div><label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Bathroom Preferences</label><textarea class="txt-area" id="bathInput" placeholder="e.g. Wet room shower, freestanding tub, double vanity, heated floors, matte black fixtures..." style="min-height:70px"></textarea></div>
+</div>
+<div style="margin-bottom:20px">
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Color Palette &amp; Materials</label>
+<textarea class="txt-area" id="colorsInput" placeholder="e.g. Warm whites, natural oak wood, terracotta accents, brushed gold hardware, Zellige tile backsplash..." style="min-height:60px"></textarea>
+</div>
+<div style="margin-bottom:28px">
+<label style="font-size:13px;font-weight:600;color:var(--dark);display:block;margin-bottom:8px">Primary Purpose</label>
+<div class="opt-grid cols3" style="margin-bottom:0">
+<button class="opt-btn" onclick="sel(this,'purpose','Rental Income')"><span class="opt-icon">💰</span><span class="opt-text"><span class="opt-label">Rental Income</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'purpose','Family Member')"><span class="opt-icon">👨‍👩‍👧</span><span class="opt-text"><span class="opt-label">Family Housing</span></span><span class="opt-check"></span></button>
+<button class="opt-btn" onclick="sel(this,'purpose','Personal Use / Office')"><span class="opt-icon">🏡</span><span class="opt-text"><span class="opt-label">Personal / Office</span></span><span class="opt-check"></span></button>
+</div>
+</div>
+<div class="nav-row"><button class="back-btn" onclick="goTo(6)">← Back</button><button class="next-btn" id="next7" disabled onclick="goTo(8)">Continue →</button></div>
 </div>
 
-<!-- STEP 8: REVIEW + GENERATE -->
 <div class="card" id="step8">
-  <div class="step-num">Step 7 of 7 — Review &amp; Generate</div>
-  <h2>Ready to generate<br>your client's ADU</h2>
-  <p class="sub">Review the selections below, then generate the full design package with AI renderings.</p>
-  <div id="summaryPreview" style="background:var(--cream);border-radius:12px;padding:20px;margin-bottom:28px;border:1px solid var(--tan);font-size:13px;line-height:1.8;color:var(--dark)"></div>
-  <div id="alertContainer"></div>
-  <div class="nav-row">
-    <button class="back-btn" onclick="goTo(7)">← Edit</button>
-    <button class="next-btn" id="generateBtn" onclick="generate()" style="background:linear-gradient(135deg,#2D5A3D,#1A3A2A)">✦ Generate Design Package</button>
-  </div>
+<div class="step-num">Step 7 of 7 — Review &amp; Generate</div>
+<h2>Ready to generate your client's ADU</h2>
+<p class="sub">Review the selections below, then generate the full design package with AI renderings.</p>
+<div id="summaryPreview" style="background:var(--cream);border-radius:12px;padding:20px;margin-bottom:28px;border:1px solid var(--tan);font-size:13px;line-height:1.8;color:var(--dark)"></div>
+<div id="alertContainer"></div>
+<div class="nav-row"><button class="back-btn" onclick="goTo(7)">← Edit</button><button class="next-btn" id="generateBtn" onclick="generate()" style="background:linear-gradient(135deg,#2D5A3D,#1A3A2A)">✦ Generate Design Package</button></div>
 </div>
 
-<!-- GENERATING -->
 <div class="gen-card" id="genCard">
-  <div class="gen-spinner"></div>
-  <h3>Designing your client's ADU…</h3>
-  <p>Our AI is creating a personalized floor plan, interior renderings, and finish specifications.</p>
-  <div class="gen-steps">
-    <div class="gen-step" id="genStep1"><span class="gen-step-icon">📐</span>Generating floor plan layout</div>
-    <div class="gen-step" id="genStep2"><span class="gen-step-icon">🏠</span>Creating exterior rendering</div>
-    <div class="gen-step" id="genStep3"><span class="gen-step-icon">🛋️</span>Designing interior spaces</div>
-    <div class="gen-step" id="genStep4"><span class="gen-step-icon">✨</span>Selecting finish specifications</div>
-    <div class="gen-step" id="genStep5"><span class="gen-step-icon">📋</span>Compiling design package</div>
-  </div>
+<div class="gen-spinner"></div>
+<h3>Designing your client's ADU…</h3>
+<p>Our AI is creating a personalized floor plan, interior renderings, and finish specifications.</p>
+<div class="gen-steps">
+<div class="gen-step" id="genStep1"><span class="gen-step-icon">📐</span>Generating floor plan layout</div>
+<div class="gen-step" id="genStep2"><span class="gen-step-icon">🏠</span>Creating exterior rendering</div>
+<div class="gen-step" id="genStep3"><span class="gen-step-icon">🛋️</span>Designing interior spaces</div>
+<div class="gen-step" id="genStep4"><span class="gen-step-icon">✨</span>Selecting finish specifications</div>
+<div class="gen-step" id="genStep5"><span class="gen-step-icon">📋</span>Compiling design package</div>
+</div>
 </div>
 
-<!-- RESULTS -->
 <div class="results-card" id="resultsCard">
-  <div class="results-header">
-    <div style="font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px">ADU Design Package — RC Remodeling & Construction</div>
-    <h2>Design Package for<br><span class="client-name" id="resultClientName"></span></h2>
-    <p id="resultSubhead"></p>
-  </div>
-  <div class="results-body">
-
-    <!-- SPECS -->
-    <div class="section-head"><div class="section-num">1</div><h3>Project Specifications</h3></div>
-    <div class="spec-grid" id="specGrid"></div>
-
-    <hr class="divider">
-
-    <!-- FLOOR PLAN -->
-    <div class="section-head"><div class="section-num">2</div><h3>Floor Plan Concept</h3></div>
-    <div class="floor-plan-box">
-      <div class="floor-plan-svg-wrap" id="floorPlanSvg"></div>
-    </div>
-    <div class="ai-text-box" id="floorPlanDesc"></div>
-
-    <hr class="divider">
-
-    <!-- RENDERINGS -->
-    <div class="section-head"><div class="section-num">3</div><h3>AI Design Renderings</h3></div>
-    <p style="font-size:13px;color:var(--warm);margin-bottom:16px;line-height:1.6">Conceptual renderings generated from your client's vision. Style and finishes reflect their selections.</p>
-    <div class="render-grid" id="renderGrid">
-      <div class="render-box" id="render1"><div class="render-placeholder"><div class="render-placeholder-text">Exterior view rendering will appear here</div></div><div class="render-label">Exterior View</div></div>
-      <div class="render-box" id="render2"><div class="render-placeholder"><div class="render-placeholder-text">Living room rendering will appear here</div></div><div class="render-label">Living Room</div></div>
-      <div class="render-box" id="render3"><div class="render-placeholder"><div class="render-placeholder-text">Kitchen rendering will appear here</div></div><div class="render-label">Kitchen</div></div>
-      <div class="render-box" id="render4"><div class="render-placeholder"><div class="render-placeholder-text">Bathroom rendering will appear here</div></div><div class="render-label">Primary Bathroom</div></div>
-    </div>
-
-    <hr class="divider">
-
-    <!-- FINISHES -->
-    <div class="section-head"><div class="section-num">4</div><h3>Finish Specifications</h3></div>
-    <div class="ai-text-box" id="finishSummary"></div>
-    <div class="finish-detail-grid" id="finishDetailGrid"></div>
-
-    <hr class="divider">
-
-    <!-- ADD-ONS -->
-    <div class="section-head"><div class="section-num">5</div><h3>Selected Upgrades</h3></div>
-    <div class="addons-list" id="addonsList"></div>
-
-    <hr class="divider">
-
-    <!-- AI NOTES -->
-    <div class="section-head"><div class="section-num">6</div><h3>Design Consultant Notes</h3></div>
-    <div class="ai-text-box" id="consultantNotes"></div>
-
-    <!-- CTA -->
-    <div class="cta-section">
-      <h3>Ready to move forward?</h3>
-      <p>Schedule a full design consultation and site walkthrough with the RC Remodeling team.</p>
-      <div class="cta-btns">
-        <button class="cta-primary">📞 Call (818) 633-1025</button>
-        <button class="cta-secondary">🌐 RCremodelingconstruction.com</button>
-      </div>
-    </div>
-
-    <button class="restart-btn" onclick="restart()">↺ Start New Consultation</button>
-  </div>
+<div class="results-header">
+<div style="font-size:11px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:8px">ADU Design Package — RC Remodeling & Construction</div>
+<h2>Design Package for<br><span class="client-name" id="resultClientName"></span></h2>
+<p id="resultSubhead"></p>
+</div>
+<div class="results-body">
+<div class="section-head"><div class="section-num">1</div><h3>Project Specifications</h3></div>
+<div class="spec-grid" id="specGrid"></div>
+<hr class="divider">
+<div class="section-head"><div class="section-num">2</div><h3>Floor Plan Concept</h3></div>
+<div class="floor-plan-box"><div class="floor-plan-svg-wrap" id="floorPlanSvg"></div></div>
+<div class="ai-text-box" id="floorPlanDesc"></div>
+<hr class="divider">
+<div class="section-head"><div class="section-num">3</div><h3>AI Design Renderings</h3></div>
+<p style="font-size:13px;color:var(--warm);margin-bottom:16px;line-height:1.6">Conceptual renderings generated from your client's vision. Style and finishes reflect their selections.</p>
+<div class="render-grid" id="renderGrid">
+<div class="render-box"><div class="render-placeholder"><div class="render-placeholder-text">Exterior view rendering will appear here</div></div><div class="render-label">Exterior View</div></div>
+<div class="render-box"><div class="render-placeholder"><div class="render-placeholder-text">Living room rendering will appear here</div></div><div class="render-label">Living Room</div></div>
+<div class="render-box"><div class="render-placeholder"><div class="render-placeholder-text">Kitchen rendering will appear here</div></div><div class="render-label">Kitchen</div></div>
+<div class="render-box"><div class="render-placeholder"><div class="render-placeholder-text">Bathroom rendering will appear here</div></div><div class="render-label">Primary Bathroom</div></div>
+</div>
+<hr class="divider">
+<div class="section-head"><div class="section-num">4</div><h3>Finish Specifications</h3></div>
+<div class="ai-text-box" id="finishSummary"></div>
+<div class="finish-detail-grid" id="finishDetailGrid"></div>
+<hr class="divider">
+<div class="section-head"><div class="section-num">5</div><h3>Selected Upgrades</h3></div>
+<div class="addons-list" id="addonsList"></div>
+<hr class="divider">
+<div class="section-head"><div class="section-num">6</div><h3>Design Consultant Notes</h3></div>
+<div class="ai-text-box" id="consultantNotes"></div>
+<div class="cta-section">
+<h3>Ready to move forward?</h3>
+<p>Schedule a full design consultation and site walkthrough with the RC Remodeling team.</p>
+<div class="cta-btns">
+<button class="cta-primary">📞 Call (818) 633-1025</button>
+<button class="cta-secondary">🌐 RCremodelingconstruction.com</button>
+</div>
+</div>
+<button class="restart-btn" onclick="restart()">↺ Start New Consultation</button>
+</div>
 </div>
 
-</div><!-- /wrap -->
+</div>
 
 <script>
-const state = {
-  apiKey:'', clientName:'', type:'', beds:'', baths:'', sqft:600,
-  style:'', site:'', finish:'', addons:[], purpose:'',
-  vision:'', kitchen:'', bath:'', colors:''
-};
-
+const state = {apiKey:'', clientName:'', type:'', beds:'', baths:'', sqft:600, style:'', site:'', finish:'', addons:[], purpose:'', vision:'', kitchen:'', bath:'', colors:''};
 let currentStep = 1;
 
-function goTo(n){
-  document.getElementById('step'+currentStep).classList.remove('active');
-  document.getElementById('step'+n).classList.add('active');
-  currentStep = n;
-  updateProgress(n);
-  if(n===8) buildSummary();
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+const addonsData = [
+  {name:'Deck / Patio',icon:'🪵',note:'Outdoor living space'},
+  {name:'Solar Panels',icon:'☀️',note:'Renewable energy'},
+  {name:'EV Charger',icon:'⚡',note:'Level 2 charging'},
+  {name:'Smart Home System',icon:'🏠',note:'Connected controls'},
+  {name:'Carport',icon:'🚗',note:'Covered parking'},
+  {name:'Laundry Room',icon:'👕',note:'Washer / dryer'},
+  {name:'Premium Appliances',icon:'🍳',note:'Stainless suite'},
+  {name:'Tankless Water Heater',icon:'🔥',note:'On-demand hot water'},
+  {name:'Radiant Floor Heating',icon:'🌡️',note:'Under-floor warmth'},
+  {name:'Vaulted Ceilings',icon:'🔺',note:'High open space'},
+  {name:'Skylights',icon:'🌤️',note:'Natural light'},
+  {name:'Custom Built-Ins',icon:'📚',note:'Storage solutions'},
+  {name:'Energy-Efficient Windows',icon:'🪟',note:'High performance'},
+  {name:'Retaining Wall',icon:'🧱',note:'Structural support'},
+  {name:'Privacy Fencing',icon:'🌿',note:'Landscaping'},
+  {name:'Security Cameras',icon:'📷',note:'Home monitoring'}
+];
 
-function updateProgress(step){
-  const total = 8;
-  for(let i=1;i<=total;i++){
-    const dot = document.getElementById('dot'+i);
-    if(!dot) continue;
-    dot.className = 'step-dot';
-    if(i < step) dot.classList.add('done');
-    else if(i === step) dot.classList.add('active');
-    if(i < total){
-      const line = document.getElementById('line'+i);
-      if(line) line.className = 'step-line' + (i < step ? ' done' : '');
-    }
-  }
-}
+window.addEventListener('DOMContentLoaded', () => {
+  const grid = document.getElementById('addonsGrid');
+  grid.innerHTML = addonsData.map(a => 
+    `<button class="addon-btn multi" onclick="toggleAddon(this,'${a.name}')"><span class="addon-icon">${a.icon}</span><span class="addon-info"><span class="addon-name">${a.name}</span><span class="addon-note">${a.note}</span></span><span class="addon-cb"></span></button>`
+  ).join('');
+});
 
-function sel(btn, key, val){
-  const group = btn.closest('.opt-grid, .card');
-  group.querySelectorAll('.opt-btn').forEach(b=>{
-    if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+key+"'")){
-      b.classList.remove('selected');
-    }
-  });
-  btn.classList.add('selected');
-  state[key] = val;
-  checkStep();
-}
+function goTo(n){document.getElementById('step'+currentStep).classList.remove('active');document.getElementById('step'+n).classList.add('active');currentStep=n;updateProgress(n);if(n===8)buildSummary();window.scrollTo({top:0,behavior:'smooth'})}
 
-function selFinish(card, val){
-  document.querySelectorAll('.finish-card').forEach(c=>c.classList.remove('selected'));
-  card.classList.add('selected');
-  state.finish = val;
-  document.getElementById('next5').disabled = false;
-}
+function updateProgress(step){const total=8;for(let i=1;i<=total;i++){const dot=document.getElementById('dot'+i);if(!dot)continue;dot.className='step-dot';if(i<step)dot.classList.add('done');else if(i===step)dot.classList.add('active');if(i<total){const line=document.getElementById('line'+i);if(line)line.className='step-line'+(i<step?' done':'')}}}
 
-function toggleAddon(btn, name){
-  btn.classList.toggle('selected');
-  if(btn.classList.contains('selected')){
-    if(!state.addons.includes(name)) state.addons.push(name);
-  } else {
-    state.addons = state.addons.filter(a=>a!==name);
-  }
-}
+function sel(btn,key,val){const group=btn.closest('.opt-grid, .card');group.querySelectorAll('.opt-btn').forEach(b=>{if(b.getAttribute('onclick')&&b.getAttribute('onclick').includes("'"+key+"'")){b.classList.remove('selected')}});btn.classList.add('selected');state[key]=val;checkStep()}
 
-function checkStep1(){
-  state.apiKey = document.getElementById('apiKeyInput').value.trim();
-  state.clientName = document.getElementById('clientNameInput').value.trim();
-  document.getElementById('next1').disabled = !(state.apiKey.startsWith('sk-') && state.clientName.length > 1);
-}
+function selFinish(card,val){document.querySelectorAll('.finish-card').forEach(c=>c.classList.remove('selected'));card.classList.add('selected');state.finish=val;document.getElementById('next5').disabled=false}
 
-function checkStep(){
-  const s = currentStep;
-  if(s===2) document.getElementById('next2').disabled = !state.type;
-  if(s===3) document.getElementById('next3').disabled = !(state.beds && state.baths);
-  if(s===4) document.getElementById('next4').disabled = !(state.style && state.site);
-}
+function toggleAddon(btn,name){btn.classList.toggle('selected');if(btn.classList.contains('selected')){if(!state.addons.includes(name))state.addons.push(name)}else{state.addons=state.addons.filter(a=>a!==name)}}
 
-function checkStep7(){
-  const v = document.getElementById('visionInput').value.trim();
-  state.vision = v;
-  const count = v.length;
-  document.getElementById('visionCount').textContent = count + ' / 50 characters minimum';
-  document.getElementById('next7').disabled = count < 50;
-}
+function checkStep1(){state.apiKey=document.getElementById('apiKeyInput').value.trim();state.clientName=document.getElementById('clientNameInput').value.trim();document.getElementById('next1').disabled=!(state.apiKey.startsWith('sk-')&&state.clientName.length>1)}
 
-const sqftLabels = {200:'Micro Studio',300:'Studio',400:'Large Studio',450:'Large Studio',500:'Studio / 1 Bed',550:'1 Bed / 1 Bath',600:'1 Bed / 1 Bath',650:'1 Bed / 1 Bath',700:'1 Bed / 1 Bath',750:'1 Bed / 1 Bath+',800:'1-2 Bed',850:'1-2 Bed',900:'2 Bed / 1 Bath',950:'2 Bed',1000:'2 Bed / 2 Bath',1050:'2 Bed / 2 Bath',1100:'2-3 Bed',1150:'2-3 Bed',1200:'3 Bed / 2 Bath'};
+function checkStep(){const s=currentStep;if(s===2)document.getElementById('next2').disabled=!state.type;if(s===3)document.getElementById('next3').disabled=!(state.beds&&state.baths);if(s===4)document.getElementById('next4').disabled=!(state.style&&state.site)}
 
-function onSqft(el){
-  const v = parseInt(el.value);
-  state.sqft = v;
-  document.getElementById('sqftDisplay').textContent = v.toLocaleString();
-  const rounded = Math.round(v/50)*50;
-  document.getElementById('sqftLabel').textContent = sqftLabels[rounded] || '';
-  const pct = ((v-200)/(1200-200)*100).toFixed(1);
-  el.style.setProperty('--pct', pct+'%');
-  updatePresetButtons(v);
-}
+function checkStep7(){const v=document.getElementById('visionInput').value.trim();state.vision=v;const count=v.length;document.getElementById('visionCount').textContent=count+' / 50 characters minimum';document.getElementById('next7').disabled=count<50}
 
-function setSqft(v){
-  state.sqft = v;
-  const el = document.getElementById('sqftRange');
-  el.value = v;
-  document.getElementById('sqftDisplay').textContent = v.toLocaleString();
-  document.getElementById('sqftLabel').textContent = sqftLabels[v] || '';
-  const pct = ((v-200)/(1200-200)*100).toFixed(1);
-  el.style.setProperty('--pct', pct+'%');
-  updatePresetButtons(v);
-}
+const sqftLabels={200:'Micro Studio',300:'Studio',400:'Large Studio',450:'Large Studio',500:'Studio / 1 Bed',550:'1 Bed / 1 Bath',600:'1 Bed / 1 Bath',650:'1 Bed / 1 Bath',700:'1 Bed / 1 Bath',750:'1 Bed / 1 Bath+',800:'1-2 Bed',850:'1-2 Bed',900:'2 Bed / 1 Bath',950:'2 Bed',1000:'2 Bed / 2 Bath',1050:'2 Bed / 2 Bath',1100:'2-3 Bed',1150:'2-3 Bed',1200:'3 Bed / 2 Bath'};
 
-function updatePresetButtons(v){
-  document.querySelectorAll('.size-preset').forEach(b=>{
-    b.classList.remove('active');
-    if(parseInt(b.textContent.match(/\d+/)[0]) === v) b.classList.add('active');
-  });
-}
+function onSqft(el){const v=parseInt(el.value);state.sqft=v;document.getElementById('sqftDisplay').textContent=v.toLocaleString();const rounded=Math.round(v/50)*50;document.getElementById('sqftLabel').textContent=sqftLabels[rounded]||'';const pct=((v-200)/(1200-200)*100).toFixed(1);el.style.setProperty('--pct',pct+'%');updatePresetButtons(v)}
 
-function buildSummary(){
-  const finishNames = {budget:'Budget / Builder-Grade', mid:'Mid-Range (Most Popular)', high:'High-End / Luxury'};
-  const typeNames = {detached:'Detached ADU', attached:'Attached ADU', garage:'Garage Conversion', jadu:'Junior ADU (JADU)'};
-  const html = `
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px">
-      <div><strong>Client:</strong> ${state.clientName}</div>
-      <div><strong>Type:</strong> ${typeNames[state.type]||state.type}</div>
-      <div><strong>Size:</strong> ${state.sqft} sq ft</div>
-      <div><strong>Layout:</strong> ${state.beds} / ${state.baths}</div>
-      <div><strong>Style:</strong> ${state.style}</div>
-      <div><strong>Site:</strong> ${state.site} lot</div>
-      <div><strong>Finish:</strong> ${finishNames[state.finish]||state.finish}</div>
-      <div><strong>Purpose:</strong> ${state.purpose||'Not specified'}</div>
-    </div>
-    ${state.addons.length ? `<div style="margin-top:10px"><strong>Add-ons:</strong> ${state.addons.join(', ')}</div>` : ''}
-    ${state.vision ? `<div style="margin-top:10px"><strong>Vision:</strong> ${state.vision.substring(0,120)}${state.vision.length>120?'…':''}</div>` : ''}
-  `;
-  document.getElementById('summaryPreview').innerHTML = html;
-}
+function setSqft(v){state.sqft=v;const el=document.getElementById('sqftRange');el.value=v;document.getElementById('sqftDisplay').textContent=v.toLocaleString();document.getElementById('sqftLabel').textContent=sqftLabels[v]||'';const pct=((v-200)/(1200-200)*100).toFixed(1);el.style.setProperty('--pct',pct+'%');updatePresetButtons(v)}
 
-async function generate(){
-  clearAlerts();
-  document.getElementById('step8').classList.remove('active');
-  const gc = document.getElementById('genCard');
-  gc.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+function updatePresetButtons(v){document.querySelectorAll('.size-preset').forEach(b=>{b.classList.remove('active');if(parseInt(b.textContent.match(/\d+/)[0])===v)b.classList.add('active')})}
 
-  const steps = ['genStep1','genStep2','genStep3','genStep4','genStep5'];
-  async function animateStep(i){
-    if(i>0) document.getElementById(steps[i-1]).classList.replace('active','done');
-    if(i<steps.length) document.getElementById(steps[i]).classList.add('active');
-  }
+function buildSummary(){const finishNames={budget:'Budget / Builder-Grade',mid:'Mid-Range (Most Popular)',high:'High-End / Luxury'};const typeNames={detached:'Detached ADU',attached:'Attached ADU',garage:'Garage Conversion',jadu:'Junior ADU (JADU)'};const html=`<div style="display:grid;grid-template-columns:1fr 1fr;gap:6px 20px"><div><strong>Client:</strong> ${state.clientName}</div><div><strong>Type:</strong> ${typeNames[state.type]||state.type}</div><div><strong>Size:</strong> ${state.sqft} sq ft</div><div><strong>Layout:</strong> ${state.beds} / ${state.baths}</div><div><strong>Style:</strong> ${state.style}</div><div><strong>Site:</strong> ${state.site} lot</div><div><strong>Finish:</strong> ${finishNames[state.finish]||state.finish}</div><div><strong>Purpose:</strong> ${state.purpose||'Not specified'}</div></div>${state.addons.length?`<div style="margin-top:10px"><strong>Add-ons:</strong> ${state.addons.join(', ')}</div>`:''}${state.vision?`<div style="margin-top:10px"><strong>Vision:</strong> ${state.vision.substring(0,120)}${state.vision.length>120?'…':''}</div>`:''}`;document.getElementById('summaryPreview').innerHTML=html}
 
-  animateStep(0);
+async function generate(){clearAlerts();document.getElementById('step8').classList.remove('active');const gc=document.getElementById('genCard');gc.classList.add('active');window.scrollTo({top:0,behavior:'smooth'});const steps=['genStep1','genStep2','genStep3','genStep4','genStep5'];function animateStep(i){if(i>0)document.getElementById(steps[i-1]).classList.replace('active','done');if(i<steps.length)document.getElementById(steps[i]).classList.add('active')}animateStep(0);const finishNames={budget:'Budget / Builder-Grade',mid:'Mid-Range',high:'High-End / Luxury'};const typeNames={detached:'Detached ADU',attached:'Attached ADU',garage:'Garage Conversion',jadu:'Junior ADU (JADU)'};const prompt=`You are an expert ADU design consultant. Provide response ONLY as valid JSON (no markdown):{"floorPlanDesc":"3-4 sentence description of floor plan layout","finishSummary":"2-3 sentences about finishes","finishDetails":[{"category":"Flooring","spec":"recommendation"},{"category":"Countertops","spec":"recommendation"},{"category":"Cabinetry","spec":"recommendation"},{"category":"Bathroom","spec":"recommendation"},{"category":"Fixtures","spec":"recommendation"},{"category":"Appliances","spec":"recommendation"}],"consultantNotes":"3-4 sentences of observations"}`;try{setTimeout(()=>animateStep(1),800);const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':state.apiKey,'anthropic-version':'2023-06-01'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompt}]})});if(!res.ok)throw new Error(`API Error ${res.status}: ${res.statusText}`);const data=await res.json();if(data.error)throw new Error(data.error.message||'API error');const raw=data.content?.[0]?.text||'{}';const clean=raw.replace(/```json|```/g,'').trim();const result=JSON.parse(clean);setTimeout(()=>animateStep(2),1600);setTimeout(()=>animateStep(3),2400);setTimeout(()=>animateStep(4),3200);setTimeout(()=>{animateStep(5);showResults(result);gc.classList.remove('active');document.getElementById('resultsCard').classList.add('active');window.scrollTo({top:0,behavior:'smooth'})},4000)}catch(err){gc.classList.remove('active');document.getElementById('step8').classList.add('active');showAlert('Error: '+err.message,'error');console.error(err)}}
 
-  const finishNames = {budget:'Budget / Builder-Grade', mid:'Mid-Range', high:'High-End / Luxury'};
-  const typeNames = {detached:'Detached ADU', attached:'Attached ADU', garage:'Garage Conversion', jadu:'Junior ADU (JADU)'};
+function showResults(r){const typeNames={detached:'Detached ADU',attached:'Attached ADU',garage:'Garage Conversion',jadu:'Junior ADU (JADU)'};const finishNames={budget:'Budget / Builder-Grade',mid:'Mid-Range',high:'High-End / Luxury'};document.getElementById('resultClientName').textContent=state.clientName;document.getElementById('resultSubhead').textContent=`${state.sqft} sq ft · ${typeNames[state.type]||state.type} · ${finishNames[state.finish]||state.finish} · ${state.style}`;document.getElementById('specGrid').innerHTML=[['Type',typeNames[state.type]||state.type],['Size',state.sqft.toLocaleString()+' sq ft'],['Layout',(state.beds||'—')+' / '+(state.baths||'—')],['Style',state.style],['Site',state.site+' lot'],['Finish',finishNames[state.finish]||state.finish],['Purpose',state.purpose||'—'],['Add-ons',state.addons.length||'None']].map(([l,v])=>`<div class="spec-tile"><div class="spec-tile-label">${l}</div><div class="spec-tile-val">${v}</div></div>`).join('');document.getElementById('floorPlanDesc').textContent=r.floorPlanDesc||'';drawFloorPlan();document.getElementById('finishSummary').textContent=r.finishSummary||'';if(r.finishDetails&&r.finishDetails.length){document.getElementById('finishDetailGrid').innerHTML=r.finishDetails.map(d=>`<div class="finish-detail-item"><div class="fd-cat">${escapeHtml(d.category)}</div><div class="fd-val">${escapeHtml(d.spec)}</div></div>`).join('')}document.getElementById('addonsList').innerHTML=state.addons.length?state.addons.map(a=>`<span class="addon-tag">✓ ${escapeHtml(a)}</span>`).join(''):'<span class="addon-tag none">No upgrades selected</span>';document.getElementById('consultantNotes').textContent=r.consultantNotes||''}
 
-  const prompt = `You are an expert ADU design consultant for RC Remodeling & Construction in Los Angeles. A client consultation has captured the following details:
+function drawFloorPlan(){const beds=state.beds;let rooms=[];if(beds==='Studio'){rooms=[{x:20,y:20,w:280,h:200,label:'Living / Sleeping Area',fill:'#E8F0F8'},{x:20,y:230,w:130,h:90,label:'Kitchen',fill:'#F0F5E8'},{x:160,y:230,w:140,h:90,label:'Bathroom',fill:'#E8F5F5'},{x:310,y:20,w:170,h:300,label:'Entry / Storage',fill:'#F5F0E8'}]}else if(beds==='1 Bed'){rooms=[{x:20,y:20,w:220,h:150,label:'Living Room',fill:'#E8F0F8'},{x:250,y:20,w:230,h:150,label:'Bedroom',fill:'#EEE8F8'},{x:20,y:180,w:150,h:140,label:'Kitchen',fill:'#F0F5E8'},{x:180,y:180,w:120,h:140,label:'Bathroom',fill:'#E8F5F5'},{x:310,y:180,w:170,h:140,label:'Laundry / Storage',fill:'#F5F0E8'}]}else if(beds==='2 Bed'){rooms=[{x:20,y:20,w:200,h:150,label:'Living Room',fill:'#E8F0F8'},{x:230,y:20,w:120,h:150,label:'Kitchen',fill:'#F0F5E8'},{x:360,y:20,w:120,h:150,label:'Dining',fill:'#F5EEE8'},{x:20,y:180,w:180,h:140,label:'Bedroom 1',fill:'#EEE8F8'},{x:210,y:180,w:130,h:140,label:'Bedroom 2',fill:'#EEE8F8'},{x:350,y:180,w:130,h:60,label:'Bath 1',fill:'#E8F5F5'},{x:350,y:250,w:130,h:70,label:'Bath 2',fill:'#E8F5F5'}]}else{rooms=[{x:20,y:20,w:180,h:140,label:'Living Room',fill:'#E8F0F8'},{x:210,y:20,w:120,h:140,label:'Kitchen',fill:'#F0F5E8'},{x:340,y:20,w:140,h:140,label:'Dining',fill:'#F5EEE8'},{x:20,y:170,w:150,h:150,label:'Bedroom 1',fill:'#EEE8F8'},{x:180,y:170,w:130,h:150,label:'Bedroom 2',fill:'#EEE8F8'},{x:320,y:170,w:120,h:150,label:'Bedroom 3',fill:'#EEE8F8'}]};const svgRooms=rooms.filter(r=>r.w>0).map(r=>{const parts=r.label.split('/');return `<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${r.fill}" stroke="#C8B8A8" stroke-width="1.5" rx="3"/><text x="${r.x+r.w/2}" y="${r.y+r.h/2-6}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#5A4A3A" font-weight="600">${parts[0].trim()}</text>${parts[1]?`<text x="${r.x+r.w/2}" y="${r.y+r.h/2+10}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#7A6A5A">${parts[1].trim()}</text>`:''}`}).join('');const compassSvg=`<g transform="translate(460,20)"><circle cx="16" cy="16" r="14" fill="white" stroke="#C8B8A8" stroke-width="1"/><text x="16" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#E8501A">N</text><polygon points="16,14 13,22 16,20 19,22" fill="#E8501A"/><polygon points="16,26 13,18 16,20 19,18" fill="#C8B8A8"/></g>`;document.getElementById('floorPlanSvg').innerHTML=`<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px"><rect width="500" height="340" fill="#FAF7F2" rx="8"/>${svgRooms}${compassSvg}<text x="14" y="330" font-family="DM Sans,sans-serif" font-size="9" fill="#9A8A7A">RC Remodeling — Conceptual Floor Plan — Not to Scale — ${state.sqft} sq ft</text></svg>`}
 
-CLIENT: ${state.clientName}
-ADU TYPE: ${typeNames[state.type]||state.type}
-SIZE: ${state.sqft} sq ft
-LAYOUT: ${state.beds} / ${state.baths}
-ARCHITECTURAL STYLE: ${state.style}
-SITE CONDITIONS: ${state.site} lot
-FINISH LEVEL: ${finishNames[state.finish]||state.finish}
-PURPOSE: ${state.purpose||'Not specified'}
-ADD-ONS: ${state.addons.length ? state.addons.join(', ') : 'None'}
-CLIENT VISION: ${state.vision}
-KITCHEN PREFERENCES: ${document.getElementById('kitchenInput').value||'Not specified'}
-BATHROOM PREFERENCES: ${document.getElementById('bathInput').value||'Not specified'}
-COLOR PALETTE & MATERIALS: ${document.getElementById('colorsInput').value||'Not specified'}
+function restart(){Object.assign(state,{type:'',beds:'',baths:'',sqft:600,style:'',site:'',finish:'',addons:[],purpose:'',vision:'',kitchen:'',bath:'',colors:''});document.getElementById('resultsCard').classList.remove('active');clearAlerts();goTo(2)}
 
-RC Remodeling finish tier reference:
-- Budget: LVP flooring, laminate counters, thermofoil cabinets, fiberglass tub, chrome fixtures, basic appliances
-- Mid-Range: Premium LVP or porcelain tile, quartz counters, shaker soft-close cabinets, walk-in shower with frameless glass, matte black fixtures, stainless appliance suite
-- High-End: Engineered hardwood or large-format porcelain, natural stone counters, custom inset cabinets, freestanding tub, designer fixtures (Brizo/Waterworks), professional-grade integrated appliances
+function showAlert(msg,type='error'){const container=document.getElementById('alertContainer');const alert=document.createElement('div');alert.className='alert '+type;alert.textContent=msg;container.innerHTML='';container.appendChild(alert)}
 
-Please respond ONLY with a valid JSON object (no markdown, no backticks, no explanation) in exactly this format:
-{
-  "floorPlanDesc": "A detailed 3-4 sentence description of the floor plan layout, room flow, and spatial arrangement for this specific ADU",
-  "finishSummary": "2-3 sentences summarizing the finish selections appropriate for this tier and client vision",
-  "finishDetails": [
-    {"category": "Flooring", "spec": "specific product/material recommendation"},
-    {"category": "Countertops", "spec": "specific product/material recommendation"},
-    {"category": "Cabinetry", "spec": "specific product/material recommendation"},
-    {"category": "Bathroom", "spec": "specific fixture and tile recommendation"},
-    {"category": "Fixtures", "spec": "specific brand and finish recommendation"},
-    {"category": "Appliances", "spec": "specific brand tier recommendation"}
-  ],
-  "consultantNotes": "3-4 sentences of personalized consultant observations about this client's ADU — key design opportunities, potential challenges to discuss, ROI notes for their stated purpose, and next steps"
-}`;
+function clearAlerts(){document.getElementById('alertContainer').innerHTML=''}
 
-  try {
-    setTimeout(()=>animateStep(1), 800);
-
-    const res = await fetch('https://api.anthropic.com/v1/messages', {
-      method:'POST',
-      headers:{'Content-Type':'application/json','x-api-key':state.apiKey,'anthropic-version':'2023-06-01'},
-      body: JSON.stringify({
-        model:'claude-sonnet-4-20250514',
-        max_tokens:2000,
-        messages:[{role:'user',content:prompt}]
-      })
-    });
-
-    if(!res.ok) throw new Error(`API error: ${res.status} - ${res.statusText}`);
-    const data = await res.json();
-    if(data.error) throw new Error(data.error.message || 'API error');
-    
-    const raw = data.content?.[0]?.text || '{}';
-    const clean = raw.replace(/```json|```/g,'').trim();
-    const result = JSON.parse(clean);
-
-    setTimeout(()=>animateStep(2), 1600);
-    setTimeout(()=>animateStep(3), 2400);
-    setTimeout(()=>animateStep(4), 3200);
-
-    setTimeout(()=>{
-      animateStep(5);
-      showResults(result);
-      gc.classList.remove('active');
-      const rc = document.getElementById('resultsCard');
-      rc.classList.add('active');
-      window.scrollTo({top:0,behavior:'smooth'});
-    }, 4000);
-
-  } catch(err){
-    gc.classList.remove('active');
-    document.getElementById('step8').classList.add('active');
-    showAlert('Error generating design package: ' + err.message, 'error');
-    console.error(err);
-  }
-}
-
-function showResults(r){
-  const typeNames = {detached:'Detached ADU', attached:'Attached ADU', garage:'Garage Conversion', jadu:'Junior ADU (JADU)'};
-  const finishNames = {budget:'Budget / Builder-Grade', mid:'Mid-Range', high:'High-End / Luxury'};
-
-  document.getElementById('resultClientName').textContent = state.clientName;
-  document.getElementById('resultSubhead').textContent = `${state.sqft} sq ft · ${typeNames[state.type]||state.type} · ${finishNames[state.finish]||state.finish} · ${state.style}`;
-
-  document.getElementById('specGrid').innerHTML = [
-    ['Type', typeNames[state.type]||state.type],
-    ['Size', state.sqft.toLocaleString()+' sq ft'],
-    ['Layout', (state.beds||'—')+' / '+(state.baths||'—')],
-    ['Style', state.style],
-    ['Site', state.site+' lot'],
-    ['Finish', finishNames[state.finish]||state.finish],
-    ['Purpose', state.purpose||'—'],
-    ['Add-ons', state.addons.length || 'None']
-  ].map(([l,v])=>`<div class="spec-tile"><div class="spec-tile-label">${l}</div><div class="spec-tile-val">${v}</div></div>`).join('');
-
-  document.getElementById('floorPlanDesc').textContent = r.floorPlanDesc || '';
-
-  drawFloorPlan();
-
-  document.getElementById('finishSummary').textContent = r.finishSummary || '';
-
-  if(r.finishDetails && r.finishDetails.length){
-    document.getElementById('finishDetailGrid').innerHTML = r.finishDetails.map(d=>
-      `<div class="finish-detail-item"><div class="fd-cat">${escapeHtml(d.category)}</div><div class="fd-val">${escapeHtml(d.spec)}</div></div>`
-    ).join('');
-  }
-
-  document.getElementById('addonsList').innerHTML = state.addons.length
-    ? state.addons.map(a=>`<span class="addon-tag">✓ ${escapeHtml(a)}</span>`).join('')
-    : '<span class="addon-tag none">No upgrades selected</span>';
-
-  document.getElementById('consultantNotes').textContent = r.consultantNotes || '';
-}
-
-function drawFloorPlan(){
-  const beds = state.beds;
-  const sqft = state.sqft;
-  let rooms = [];
-
-  if(beds==='Studio'){
-    rooms = [
-      {x:20,y:20,w:280,h:200,label:'Living / Sleeping Area',fill:'#E8F0F8'},
-      {x:20,y:230,w:130,h:90,label:'Kitchen',fill:'#F0F5E8'},
-      {x:160,y:230,w:140,h:90,label:'Bathroom',fill:'#E8F5F5'},
-      {x:310,y:20,w:170,h:300,label:'Entry / Storage',fill:'#F5F0E8'},
-    ];
-  } else if(beds==='1 Bed'){
-    rooms = [
-      {x:20,y:20,w:220,h:150,label:'Living Room',fill:'#E8F0F8'},
-      {x:250,y:20,w:230,h:150,label:'Bedroom',fill:'#EEE8F8'},
-      {x:20,y:180,w:150,h:140,label:'Kitchen',fill:'#F0F5E8'},
-      {x:180,y:180,w:120,h:140,label:'Bathroom',fill:'#E8F5F5'},
-      {x:310,y:180,w:170,h:140,label:'Laundry / Storage',fill:'#F5F0E8'},
-    ];
-  } else if(beds==='2 Bed'){
-    rooms = [
-      {x:20,y:20,w:200,h:150,label:'Living Room',fill:'#E8F0F8'},
-      {x:230,y:20,w:120,h:150,label:'Kitchen',fill:'#F0F5E8'},
-      {x:360,y:20,w:120,h:150,label:'Dining',fill:'#F5EEE8'},
-      {x:20,y:180,w:180,h:140,label:'Bedroom 1',fill:'#EEE8F8'},
-      {x:210,y:180,w:130,h:140,label:'Bedroom 2',fill:'#EEE8F8'},
-      {x:350,y:180,w:130,h:60,label:'Bath 1',fill:'#E8F5F5'},
-      {x:350,y:250,w:130,h:70,label:'Bath 2',fill:'#E8F5F5'},
-    ];
-  } else {
-    rooms = [
-      {x:20,y:20,w:180,h:140,label:'Living Room',fill:'#E8F0F8'},
-      {x:210,y:20,w:120,h:140,label:'Kitchen',fill:'#F0F5E8'},
-      {x:340,y:20,w:140,h:140,label:'Dining',fill:'#F5EEE8'},
-      {x:20,y:170,w:150,h:150,label:'Bedroom 1',fill:'#EEE8F8'},
-      {x:180,y:170,w:130,h:150,label:'Bedroom 2',fill:'#EEE8F8'},
-      {x:320,y:170,w:120,h:150,label:'Bedroom 3',fill:'#EEE8F8'},
-    ];
-  }
-
-  const svgRooms = rooms.filter(r=>r.w>0).map(r=>{
-    const parts = r.label.split('/');
-    return `<rect x="${r.x}" y="${r.y}" width="${r.w}" height="${r.h}" fill="${r.fill}" stroke="#C8B8A8" stroke-width="1.5" rx="3"/>
-    <text x="${r.x+r.w/2}" y="${r.y+r.h/2-6}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="10" fill="#5A4A3A" font-weight="600">${parts[0].trim()}</text>
-    ${parts[1] ? `<text x="${r.x+r.w/2}" y="${r.y+r.h/2+10}" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="9" fill="#7A6A5A">${parts[1].trim()}</text>` : ''}`;
-  }).join('');
-
-  const compassSvg = `<g transform="translate(460,20)">
-    <circle cx="16" cy="16" r="14" fill="white" stroke="#C8B8A8" stroke-width="1"/>
-    <text x="16" y="12" text-anchor="middle" font-family="DM Sans,sans-serif" font-size="8" font-weight="700" fill="#E8501A">N</text>
-    <polygon points="16,14 13,22 16,20 19,22" fill="#E8501A"/>
-    <polygon points="16,26 13,18 16,20 19,18" fill="#C8B8A8"/>
-  </g>`;
-
-  document.getElementById('floorPlanSvg').innerHTML = `
-    <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px">
-      <rect width="500" height="340" fill="#FAF7F2" rx="8"/>
-      ${svgRooms}
-      ${compassSvg}
-      <text x="14" y="330" font-family="DM Sans,sans-serif" font-size="9" fill="#9A8A7A">RC Remodeling — Conceptual Floor Plan — Not to Scale — ${state.sqft} sq ft</text>
-    </svg>
-  `;
-}
-
-function restart(){
-  Object.assign(state,{type:'',beds:'',baths:'',sqft:600,style:'',site:'',finish:'',addons:[],purpose:'',vision:'',kitchen:'',bath:'',colors:''});
-  document.getElementById('resultsCard').classList.remove('active');
-  clearAlerts();
-  goTo(2);
-}
-
-function showAlert(msg, type='error'){
-  const container = document.getElementById('alertContainer');
-  const alert = document.createElement('div');
-  alert.className = 'alert ' + type;
-  alert.textContent = msg;
-  container.innerHTML = '';
-  container.appendChild(alert);
-}
-
-function clearAlerts(){
-  document.getElementById('alertContainer').innerHTML = '';
-}
-
-function escapeHtml(text){
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
-}
+function escapeHtml(text){const div=document.createElement('div');div.textContent=text;return div.innerHTML}
 </script>
 </body>
 </html>
